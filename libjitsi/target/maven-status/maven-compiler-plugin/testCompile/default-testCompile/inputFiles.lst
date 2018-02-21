@@ -1,0 +1,12 @@
+/users/dpauwels/libjitsi/test/org/jitsi/sctp4j/SctpTransferTest.java
+/users/dpauwels/libjitsi/test/org/jitsi/util/PasswordUtilTest.java
+/users/dpauwels/libjitsi/test/org/jitsi/config/ConfigPrintTest.java
+/users/dpauwels/libjitsi/test/org/jitsi/sctp4j/TestLink.java
+/users/dpauwels/libjitsi/test/org/jitsi/sctp4j/SctpTestSuite.java
+/users/dpauwels/libjitsi/test/org/jitsi/impl/neomedia/transform/srtp/SRTPCipherF8Test.java
+/users/dpauwels/libjitsi/test/org/jitsi/impl/neomedia/transform/srtp/SRTPCipherCTRTest.java
+/users/dpauwels/libjitsi/test/org/jitsi/impl/neomedia/rtp/remotebitrateestimator/TimestampUtilsTest.java
+/users/dpauwels/libjitsi/test/org/jitsi/impl/neomedia/rtp/ResumableStreamRewriterTest.java
+/users/dpauwels/libjitsi/test/org/jitsi/sctp4j/SctpNativeWrapperTest.java
+/users/dpauwels/libjitsi/test/org/jitsi/impl/neomedia/codec/video/h264/H264Test.java
+/users/dpauwels/libjitsi/test/org/jitsi/impl/neomedia/rtcp/RTCPTCCPacketTest.java

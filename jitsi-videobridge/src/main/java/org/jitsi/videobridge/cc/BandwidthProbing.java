@@ -1,0 +1,456 @@
+/*
+ * Copyright @ 2015 Atlassian Pty Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.jitsi.videobridge.cc;
+
+import org.jitsi.impl.neomedia.*;
+import org.jitsi.impl.neomedia.rtp.*;
+import org.jitsi.impl.neomedia.transform.*;
+import org.jitsi.service.configuration.*;
+import org.jitsi.service.libjitsi.*;
+import org.jitsi.service.neomedia.*;
+import org.jitsi.util.*;
+import org.jitsi.util.concurrent.*;
+import org.jitsi.videobridge.*;
+import org.jitsi.videobridge.optimizer.PSNRHelp;
+
+import java.util.*;
+import java.awt.event.*;
+import java.util.concurrent.ThreadLocalRandom;
+
+/**
+ * @author George Politis
+ */
+public class BandwidthProbing
+    extends PeriodicRunnable
+{
+    /**
+     * The system property name that holds a boolean that determines whether or
+     * not to activate the RTX bandwidth probing mechanism that implements
+     * stream protection.
+     */
+    public static final String
+        DISABLE_RTX_PROBING_PNAME = "org.jitsi.videobridge.DISABLE_RTX_PROBING";
+
+    /**
+     * The system property name that holds the interval/period in milliseconds
+     * at which {@link #run()} is to be invoked.
+     */
+    public static final String
+        PADDING_PERIOD_MS_PNAME = "org.jitsi.videobridge.PADDING_PERIOD_MS";
+
+    /**
+     * The {@link Logger} to be used by this instance to print debug
+     * information.
+     */
+    private static final Logger logger = Logger.getLogger(BandwidthProbing.class);
+
+    /**
+     * The ConfigurationService to get config values from.
+     */
+    private static final ConfigurationService
+        cfg = LibJitsi.getConfigurationService();
+
+    /**
+     * the interval/period in milliseconds at which {@link #run()} is to be
+     * invoked.
+     */
+    //private static final long PADDING_PERIOD_MS = 
+    	//cfg != null ? cfg.getInt(PADDING_PERIOD_MS_PNAME, 15) : 15;
+
+    //Stefano: the period is now set using the available configuration
+    private static final long PADDING_PERIOD_MS = cfg.getInt("org.jitsi.videobridge.PADDING_PERIOD_MS", 1000);
+
+    /**
+     * A boolean that determines whether or not to activate the RTX bandwidth
+     * probing mechanism that implements stream protection.
+     */
+    private static final boolean DISABLE_RTX_PROBING =
+        cfg != null && cfg.getBoolean(DISABLE_RTX_PROBING_PNAME, false);
+
+    private static final double BACKOFFTH = cfg.getDouble("org.jitsi.videobridge.BACKOFF_TH_PROBING", 0.0);
+    private static final double SAFETYMG = cfg.getDouble("org.jitsi.videobridge.SAFETY_MARGIN_PROBING", 0.0);
+    private static final boolean PROBING_ENABLED = cfg.getBoolean("org.jitsi.videobridge.PROBING", false);
+    private static final int MIN_ENCODING = 1000*cfg.getInt("org.jitsi.videobridge.MIN_ENCODING", 250);
+    private static final int MAX_ENCODING = 1000*cfg.getInt("org.jitsi.videobridge.MAX_ENCODING", 2000);
+
+    /**
+     * The {@link VideoChannel} to probe for available send bandwidth.
+     */
+    private final VideoChannel dest;
+
+    /**
+     * The sequence number to use if probing with the JVB's SSRC.
+     */
+    private int seqNum = new Random().nextInt(0xFFFF);
+
+    /**
+     * The RTP timestamp to use if probing with the JVB's SSRC.
+     */
+    private long ts = new Random().nextInt() & 0xFFFFFFFFL;
+	
+    private long prevProbing = -1;
+    private long prevBwe = -1;
+    private long prevBps = -1;
+    private double prevPSNR = -1;
+    private long prevSSRC = 0;
+    private int backoff = 0;
+
+    private double error = 0;
+    private double playedRate = 0;
+    private double psnr = 0;
+    private double numStepsRate = 0;
+    private double numStepsError = 0;
+
+    private PSNRHelp psnrHelp = new PSNRHelp(20);
+
+    private javax.swing.Timer print_results = new javax.swing.Timer(2000, new ActionListener(){
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+
+	System.out.println("[Probing] Client ID: " + dest.getID() + " -- Average error: " + (error/numStepsError) + " -- Played rate: " + (playedRate/numStepsRate));
+
+    }
+    });
+
+    /**
+     * Ctor.
+     *
+     * @param dest the {@link VideoChannel} to probe for available send
+     * bandwidth.
+     */
+    public BandwidthProbing(VideoChannel dest)
+    {
+        super(PADDING_PERIOD_MS);
+        this.dest = dest;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void run()
+    {
+        super.run();
+
+        MediaStream destStream = dest.getStream();
+        if (destStream == null
+            || (destStream.getDirection() != null
+                && !destStream.getDirection().allowsSending()))
+        {
+            return;
+        }
+
+        List<SimulcastController> simulcastControllerList
+            = dest.getBitrateController().getSimulcastControllers();
+
+        if (simulcastControllerList == null || simulcastControllerList.isEmpty())
+        {
+            return;
+        }
+
+        // We calculate how much to probe for based on the total target bps
+        // (what we're able to reach), the total optimal bps (what we want to
+        // be able to reach) and the total current bps (what we currently send)
+
+        long totalCurrentBps = 0, totalTargetBps = 0, totalOptimalBps = 0;
+	long currentSSRC = 0;
+
+        List<Long> ssrcsToProtect = new ArrayList<>();
+        for (SimulcastController simulcastController : simulcastControllerList)
+        {
+            long currentBps = simulcastController.getSource()
+                .getBps(simulcastController.getCurrentIndex(),
+                    true /* performTimeoutCheck */);
+
+            if (currentBps > 0)
+            {
+		long ssrc = simulcastController.getTargetSSRC();
+		currentSSRC = ssrc;
+                // Do not protect SSRC if it's not streaming.
+                totalCurrentBps += currentBps;
+                if (ssrc > -1)
+                {
+                    ssrcsToProtect.add(ssrc);
+                }
+            }
+
+            totalTargetBps += simulcastController
+                .getSource().getBps(simulcastController.getTargetIndex(),
+                    true /* performTimeoutCheck */);
+            totalOptimalBps += simulcastController
+                .getSource().getBps(simulcastController.getOptimalIndex(),
+                    true /* performTimeoutCheck */);
+        }
+
+        // How much padding do we need?
+        long totalNeededBps
+            = totalOptimalBps - Math.max(totalTargetBps, totalCurrentBps);
+
+	long bweBps = ((VideoMediaStream) destStream).getOrCreateBandwidthEstimator().getLatestEstimate();
+
+	//Stefano: second condition added to enable probing for the sending channels only
+        if ((totalNeededBps < 1 && totalCurrentBps == 0) || !PROBING_ENABLED)
+        {
+            // Not much.
+            return;
+        }
+
+        if (totalOptimalBps <= bweBps)
+        {
+            // it seems like the optimal bps fits in the bandwidth estimation,
+            // let's update the bitrate controller.
+            dest.getBitrateController().update(null, bweBps);
+	    //Stefano: for some reason, totalOptimalBps is not computed in the correct way. Commented the return statement to enable probing
+            //return;
+        }
+
+	if (this.numStepsRate == 0)
+		//print_results.start();
+
+	if (currentSSRC != this.prevSSRC){
+		this.prevProbing = -1;
+		if (totalCurrentBps > this.prevBps){
+			this.backoff = 40;
+		}
+	}
+
+	this.backoff--;
+
+	long paddingBps = 0;
+	if (bweBps < MAX_ENCODING && this.backoff <= 0){
+
+		double m = (-BACKOFFTH)/(MAX_ENCODING);
+		double c = BACKOFFTH - m*MIN_ENCODING;
+		double prob_coeff = Math.max(c + m*totalCurrentBps, 0.0);
+
+		if (bweBps < this.prevBwe){
+			this.prevProbing = -1;
+		}
+		if (this.prevProbing > 0){
+			paddingBps = (long)((1+prob_coeff)*this.prevProbing);
+		}
+		else{
+			paddingBps = (long)(prob_coeff*totalCurrentBps);
+		}
+		if (paddingBps >= (long)Math.max((bweBps - totalCurrentBps), 0)){
+			paddingBps = (long)Math.max((SAFETYMG/2.0)*(bweBps - totalCurrentBps), 0);
+		}
+	}
+
+	this.prevProbing = paddingBps;
+	this.prevBwe = bweBps;
+	this.prevBps = totalCurrentBps;
+	this.prevPSNR = this.psnrHelp.toPSNR(totalCurrentBps/1000.0);
+	this.prevSSRC = currentSSRC;
+
+	this.numStepsRate++;
+	this.playedRate += totalCurrentBps/1000.0;
+	this.psnr += this.psnrHelp.toPSNR(totalCurrentBps/1000.0);
+	if (bweBps >= totalCurrentBps){
+		this.numStepsError++;
+		this.error += Math.max((Math.min(bweBps, MAX_ENCODING) - totalCurrentBps)/1000.0, 0.0);
+	}
+
+	//System.out.println(BACKOFFTH + "; " + SAFETYMG + "; " + MIN_ENCODING + "; " + MAX_ENCODING + "; " + PROBING_ENABLED);
+
+	/*double m = (-BACKOFFTH)/(MAX_ENCODING);
+	double c = BACKOFFTH - m*MIN_ENCODING;
+
+	double prob_coeff = Math.max(c + m*totalCurrentBps, 0.0);
+	double bott_coeff = Math.max(c + m*bweBps, 0.0);
+
+	if (bweBps < this.prevBwe)
+		this.prevBottleneck = this.prevBps + this.prevProbing;
+	
+	if (currentSSRC != this.prevSSRC){
+		this.prevProbing = -1;
+		this.numSamples = 0;
+		if (totalCurrentBps > this.prevBps)
+			this.backoff = 50;
+		else
+			this.backoff = 15;
+	}
+
+	this.backoff--;
+
+	long paddingBps = 0;
+	if (bweBps < MAX_ENCODING && this.backoff <= 0){
+
+		if (bweBps < this.prevBwe || currentSSRC != this.prevSSRC){
+			this.prevProbing = -1;
+			this.numSamples = 0;
+		}
+
+		if (bweBps > this.prevBottleneck){
+			this.prevProbing = -1;
+			this.numSamples = 0;
+			this.prevBottleneck = (long)((1+bott_coeff)*Math.max(this.prevBottleneck, bweBps));
+		}
+
+		long maxProbing = (long)((SAFETYMG)*(this.prevBottleneck - bweBps));
+		
+		if (this.prevProbing >= maxProbing){
+			if (bweBps == this.prevBwe){
+				this.numSamples++;
+			}
+			else{
+				this.numSamples = 0;
+			}
+		}
+
+		if (this.numSamples >= 3 && this.prevProbing >= maxProbing){
+			this.numSamples = 0;
+			this.prevBottleneck = (long)((1+bott_coeff)*this.prevBottleneck);
+		}
+
+		if (this.prevProbing > 0){
+			paddingBps = (long)((1+bott_coeff)*this.prevProbing);
+		}
+		else{
+			paddingBps = (long)(bott_coeff*totalCurrentBps);
+		}
+		
+		paddingBps = (long) Math.min(maxProbing, paddingBps);
+
+	}
+
+	this.prevProbing = paddingBps;
+	this.prevBwe = bweBps;
+	this.prevBps = totalCurrentBps;
+	this.prevSSRC = currentSSRC;
+
+	System.out.println("[Probing] currentBps: " + totalCurrentBps + "; bandwidth: " + bweBps + "; probing: " + paddingBps + "; bottleneck: " + this.prevBottleneck);*/
+
+        if (paddingBps < 1)
+        {
+            // Not much.
+            return;
+        }
+
+        MediaStreamImpl stream = (MediaStreamImpl) destStream;
+
+        // XXX a signed int is practically sufficient, as it can represent up to
+        // ~ 2GB
+        int bytes = (int) (PADDING_PERIOD_MS * paddingBps / 1000 / 8);
+        RtxTransformer rtxTransformer = stream.getRtxTransformer();
+
+        if (!DISABLE_RTX_PROBING)
+        {
+            if (!ssrcsToProtect.isEmpty())
+            {
+                // stream protection with padding.
+                for (Long ssrc : ssrcsToProtect)
+                {
+                    bytes = rtxTransformer.sendPadding(ssrc, bytes);
+                    if (bytes < 1)
+                    {
+                        // We're done.
+                        return;
+                    }
+                }
+            }
+        }
+
+        // Send crap with the JVB's SSRC.
+        long mediaSSRC = getSenderSSRC();
+	//long mediaSSRC = ssrc1;
+        int pt = 100; // VP8 pt.
+        ts += 3000;
+
+        int pktLen = RawPacket.FIXED_HEADER_SIZE + 0xFF;
+        int len = (bytes / pktLen) + 1 /* account for the mod */;
+
+        for (int i = 0; i < len; i++)
+        {
+            try
+            {
+                // These packets should not be cached.
+                RawPacket pkt
+                    = RawPacket.makeRTP(mediaSSRC, pt, seqNum++, ts, pktLen);
+
+                stream.injectPacket(pkt, /* data */ true, rtxTransformer);
+            }
+            catch (TransmissionFailedException tfe)
+            {
+                logger.warn("Failed to retransmit a packet.");
+            }
+        }
+    }
+
+    /**
+     * (attempts) to get the local SSRC that will be used in the media sender
+     * SSRC field of the RTCP reports. TAG(cat4-local-ssrc-hurricane)
+     *
+     * @return get the local SSRC that will be used in the media sender SSRC
+     * field of the RTCP reports.
+     */
+    private long getSenderSSRC(){
+
+        StreamRTPManager streamRTPManager = dest.getStream().getStreamRTPManager();
+        if (streamRTPManager == null)
+        {
+            return -1;
+        }
+
+        return dest.getStream().getStreamRTPManager().getLocalSSRC();
+    }
+
+    public double getAvgError(){
+	
+	if (this.numStepsError > 0){
+		return (this.error/this.numStepsError);
+	}
+	else{
+		return 0.0;
+	}
+    }
+
+    public double getAvgPlayedRate(){
+	
+	if (this.numStepsError > 0){
+		return (this.playedRate/this.numStepsRate);
+	}
+	else{
+		return 0.0;
+	}
+    }
+
+    public double getAvgPSNR(){
+	
+	if (this.numStepsError > 0){
+		return (this.psnr/this.numStepsRate);
+	}
+	else{
+		return 0.0;
+	}
+    }
+
+    public double getBandwidth(){
+	
+	return this.prevBwe;
+    }
+
+    public double getPlayedRate(){
+	
+	return this.prevBps;
+    }
+
+    public double getPSNR(){
+	
+	return this.prevPSNR;
+    }
+}

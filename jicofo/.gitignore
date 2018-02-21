@@ -1,0 +1,10 @@
+*.class
+/classes/
+/dist/
+*.jar
+/junit-reports/
+*.swp
+/target/
+.classpath
+.project
+.settings/

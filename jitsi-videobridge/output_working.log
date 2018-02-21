@@ -1,0 +1,77 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jitsi-videobridge 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ jitsi-videobridge ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /users/dpauwels/jitsi-videobridge/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ jitsi-videobridge ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 65 source files to /users/dpauwels/jitsi-videobridge/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/VideoChannel.java:[594,26] unchecked call to add(E) as a member of the raw type java.util.ArrayList
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/VideoChannel.java:[792,46] sendFIR(int) in org.jitsi.impl.neomedia.rtp.translator.RTCPFeedbackMessageSender has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/cc/SimulcastController.java:[363,48] sendFIR(int) in org.jitsi.impl.neomedia.rtp.translator.RTCPFeedbackMessageSender has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/LipSyncHack.java:[468,29] unchecked call to <V>andThen(org.jitsi.util.function.AbstractFunction<? super R,? extends V>) as a member of the raw type org.jitsi.util.function.AbstractFunction
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/LipSyncHack.java:[468,29] unchecked conversion
+  required: org.jitsi.util.function.AbstractFunction<org.jitsi.service.neomedia.RawPacket,org.jitsi.service.neomedia.RawPacket>
+  found:    org.jitsi.util.function.AbstractFunction
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/EndpointMessageTransport.java:[386,47] unchecked conversion
+  required: java.util.Set<java.lang.String>
+  found:    java.util.Set
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/EndpointMessageTransport.java:[452,49] unchecked conversion
+  required: java.util.Set<java.lang.String>
+  found:    java.util.Set
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/Videobridge.java:[1487,17] org.jitsi.videobridge.HarvesterConfiguration in org.jitsi.videobridge has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/Videobridge.java:[1505,41] ENABLE_LIPSYNC_HACK_PNAME in org.jitsi.videobridge.Endpoint has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/Videobridge.java:[1513,45] DISABLE_NACK_TERMINATION_PNAME in org.jitsi.videobridge.VideoChannel has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/stats/callstats/TokenGenerator.java:[131,64] unchecked cast
+  required: java.util.Map<java.lang.String,java.lang.Object>
+  found:    java.util.Map
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/rest/ssi/HttpServletResponseWrapper.java:[268,17] setStatus(int,java.lang.String) in javax.servlet.http.HttpServletResponse has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/rest/ssi/HttpServletResponseWrapper.java:[90,19] encodeRedirectUrl(java.lang.String) in javax.servlet.http.HttpServletResponse has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/rest/ssi/HttpServletResponseWrapper.java:[102,19] encodeUrl(java.lang.String) in javax.servlet.http.HttpServletResponse has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/rest/ssi/HttpServletResponseWrapper.java:[92,31] encodeRedirectUrl(java.lang.String) in javax.servlet.http.HttpServletResponse has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/rest/ssi/HttpServletResponseWrapper.java:[270,24] setStatus(int,java.lang.String) in javax.servlet.http.HttpServletResponse has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/RawUdpTransportManager.java:[353,29] org.jitsi.videobridge.HarvesterConfiguration in org.jitsi.videobridge has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/RawUdpTransportManager.java:[353,51] NAT_HARVESTER_LOCAL_ADDRESS in org.jitsi.videobridge.HarvesterConfiguration has been deprecated
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/rest/JSONDeserializer.java:[54,78] unchecked conversion
+  required: java.util.Iterator<java.util.Map.Entry<java.lang.Object,java.lang.Object>>
+  found:    java.util.Iterator
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/rest/JSONDeserializer.java:[505,49] unchecked conversion
+  required: java.util.Iterator<java.util.Map.Entry<java.lang.Object,java.lang.Object>>
+  found:    java.util.Iterator
+[WARNING] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/stats/VideobridgeStatistics.java:[562,36] unchecked call to add(E) as a member of the raw type java.util.ArrayList
+[INFO] 21 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/cc/BitrateController.java:[426,55] cannot find symbol
+  symbol:   variable notforwarded
+  location: class org.jitsi.videobridge.cc.BitrateController
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.974s
+[INFO] Finished at: Fri Jul 07 05:00:58 MDT 2017
+[INFO] Final Memory: 21M/262M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.5.1:compile (default-compile) on project jitsi-videobridge: Compilation failure
+[ERROR] /users/dpauwels/jitsi-videobridge/src/main/java/org/jitsi/videobridge/cc/BitrateController.java:[426,55] cannot find symbol
+[ERROR] symbol:   variable notforwarded
+[ERROR] location: class org.jitsi.videobridge.cc.BitrateController
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

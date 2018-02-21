@@ -1,0 +1,36 @@
+handlers= java.util.logging.ConsoleHandler
+#handlers= java.util.logging.ConsoleHandler, com.agafua.syslog.SyslogHandler
+java.util.logging.SimpleFormatter.format=%1$tl:%1$tM:%1$tS.%1$tL %5$s%n
+java.util.logging.ConsoleHandler.level = INFO
+java.util.logging.ConsoleHandler.formatter = net.java.sip.communicator.util.ScLogFormatter
+
+net.java.sip.communicator.util.ScLogFormatter.programname=JVB
+
+.level=OFF
+
+#org.jitsi.videobridge.xmpp.ComponentImpl.level=INFO
+#org.jitsi.videobridge.xmpp.MediaStreamTrackFactory.level=ALL
+#org.jitsi.videobridge.cc.BitrateController.level=ALL
+#org.jitsi.videobridge.cc.SimulcastController.level=ALL
+org.jitsi.videobridge.cc.BandwidthProbing.level=ALL
+#org.jitsi.videobridge.RtpChannel.level=ALL
+#org.jitsi.videobridge.VideoChannel.level=ALL
+#org.jitsi.impl.neomedia.rtp.RTPEncodingDesc.level=ALL
+#org.jitsi.videobridge.Content.level=ALL
+org.jitsi.videobridge.SenderController.level=ALL
+#org.jitsi.impl.neomedia.rtcp.RTCPReceiverFeedbackTermination.level=ALL
+#org.jitsi.videobridge.ConferenceSpeechActivity.level=ALL
+
+# All of the INFO level logs from MediaStreamImpl are unnecessary in the context of jitsi-videobridge.
+#org.jitsi.impl.neomedia.MediaStreamImpl.level=WARNING
+
+# Syslog(uncomment handler to use)
+#com.agafua.syslog.SyslogHandler.transport = udp
+#com.agafua.syslog.SyslogHandler.facility = local0
+#com.agafua.syslog.SyslogHandler.port = 514
+#com.agafua.syslog.SyslogHandler.hostname = localhost
+#com.agafua.syslog.SyslogHandler.formatter = net.java.sip.communicator.util.ScLogFormatter
+#com.agafua.syslog.SyslogHandler.escapeNewlines = false
+
+# to disable double timestamps in syslog uncomment next line
+#net.java.sip.communicator.util.ScLogFormatter.disableTimestamp=true

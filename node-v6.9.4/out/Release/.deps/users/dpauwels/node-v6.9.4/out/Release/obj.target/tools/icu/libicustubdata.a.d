@@ -1,0 +1,1 @@
+cmd_/users/dpauwels/node-v6.9.4/out/Release/obj.target/tools/icu/libicustubdata.a := rm -f /users/dpauwels/node-v6.9.4/out/Release/obj.target/tools/icu/libicustubdata.a && ar crsT /users/dpauwels/node-v6.9.4/out/Release/obj.target/tools/icu/libicustubdata.a /users/dpauwels/node-v6.9.4/out/Release/obj.target/icustubdata/deps/icu-small/source/stubdata/stubdata.o

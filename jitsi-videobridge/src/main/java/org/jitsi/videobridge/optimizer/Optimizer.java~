@@ -1,0 +1,140 @@
+package org.jitsi.videobridge.optimizer;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import ilog.concert.IloException;
+import ilog.cplex.IloCplex.UnknownObjectException;
+
+public abstract class Optimizer {
+	
+	protected int numLayers;
+	protected int minEncoding;
+	protected int maxEncoding;
+	protected int[] encodings;
+	protected String solverType = null;
+	protected double execTime;
+	protected String domain = null;
+	protected int numEncodings;
+	protected PSNRHelp psnr;
+	
+	public Optimizer(int numLayers, int minEncoding, int maxEncoding, int numEncodings, String type, String domain){
+		
+		this.numLayers = numLayers;
+		this.minEncoding = minEncoding;
+		this.maxEncoding = maxEncoding;
+		this.numEncodings = numEncodings;
+		if (type != null)
+			this.solverType = type.toLowerCase();
+		this.psnr = new PSNRHelp(20);
+		this.domain = domain.toLowerCase();
+		
+		if (this.domain.equals("rate")){
+			setEncodingsRate(minEncoding, maxEncoding, numEncodings);
+		}
+		else{
+			setEncodingsPSNR(minEncoding, maxEncoding, numEncodings);
+		}
+	}
+	
+	abstract int[] runOptimization(int[] bandwidth);
+	
+	public void setEncodingsRate(int minEncoding, int maxEncoding, int numEncodings){
+		
+		int step = (maxEncoding - minEncoding)/numEncodings;
+		this.encodings = new int[numEncodings+1];
+		for(int i = 0; i <= numEncodings; i++){
+			this.encodings[i] = minEncoding + step*i;
+		}
+	}
+	
+	public void setEncodingsPSNR(int minEncoding, int maxEncoding, int numEncodings){
+		
+		int minPSNR = (int) this.psnr.toPSNR(minEncoding);
+		int maxPSNR = (int) this.psnr.toPSNR(maxEncoding);
+		
+		int step = (maxPSNR - minPSNR)/numEncodings;
+		this.encodings = new int[numEncodings+1];
+		for(int i = 0; i <= numEncodings; i++){
+			this.encodings[i] = (int) this.psnr.toRate(minPSNR + step*i);
+		}
+	}
+	
+	public double getExecTime(){
+		
+		return this.execTime;
+	}
+	
+	public int[] fillGaps(int[] solGaps){
+		
+		int minBitRate = this.encodings[0];
+		int maxBitRate = this.encodings[this.encodings.length-1];
+		
+		int gaps = 0;
+		for (int i = solGaps.length-1; i >= 0; i--){
+			if(solGaps[i] == 0){
+				gaps++;
+				solGaps[i] = maxBitRate;
+			}
+			else
+				break;
+		}
+
+		while (gaps > 0){
+
+			int maxDis = distance(solGaps[0], minBitRate);
+			int maxDisIndex = 0;
+
+			for (int i = 1; i < solGaps.length - gaps; i++){
+
+				int dis = distance(solGaps[i], solGaps[i-1]);
+				if(dis > maxDis){
+					maxDis = dis;
+					maxDisIndex = i;
+				}
+
+			}
+
+			int dis = distance(maxBitRate, solGaps[solGaps.length-gaps-1]);
+			if(dis > maxDis){
+				maxDis = dis;
+				maxDisIndex = solGaps.length-gaps;
+			}
+
+			int newBitRate;
+			if (maxDisIndex == 0){
+				newBitRate = newRate(minBitRate, maxDis/2);
+			}
+			else{
+				newBitRate = newRate(solGaps[maxDisIndex-1], maxDis/2);
+			}
+
+			solGaps[this.numLayers - gaps] = newBitRate;
+			Arrays.sort(solGaps);
+			gaps--;
+
+		}
+
+		return solGaps;
+	}
+	
+	public int distance(int a, int b){
+		
+		if (this.domain.equals("rate"))
+			return a - b;
+		else
+			return (int) (this.psnr.toPSNR(a)-this.psnr.toPSNR(b));
+		
+	}
+	
+	public int newRate(int rate, int distance){
+		
+		if (this.domain.equals("rate"))
+			return rate + distance;
+		else
+			return (int) this.psnr.toRate((this.psnr.toPSNR(rate) + distance));
+		
+	}
+
+}

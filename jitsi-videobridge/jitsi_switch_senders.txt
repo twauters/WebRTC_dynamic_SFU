@@ -1,0 +1,987 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jitsi-videobridge 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ jitsi-videobridge ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /users/dpauwels/jitsi-videobridge/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ jitsi-videobridge ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- exec-maven-plugin:1.4.0:java (default-cli) @ jitsi-videobridge ---
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/users/dpauwels/.m2/repository/org/slf4j/slf4j-simple/1.6.1/slf4j-simple-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/users/dpauwels/.m2/repository/org/slf4j/slf4j-jdk14/1.7.7/slf4j-jdk14-1.7.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
+7:20:31.519 Successfully started LibJitsi using as implementation: org.jitsi.impl.libjitsi.LibJitsiOSGiImpl
+7:20:31.550 java.vendor=Oracle Corporation
+7:20:31.551 org.ice4j.ice.CONSENT_FRESHNESS_INTERVAL=3000
+7:20:31.552 sun.java.launcher=SUN_STANDARD
+7:20:31.552 org.ice4j.ice.harvest.AbstractUdpListener.SO_RCVBUF=10485760
+7:20:31.553 sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+7:20:31.554 org.jitsi.impl.neomedia.transform.srtp.SRTPCryptoContext.checkReplay=false
+7:20:31.554 os.name=Linux
+7:20:31.555 sun.boot.class.path=/usr/lib/jvm/jdk1.8.111/jre/lib/resources.jar:/usr/lib/jvm/jdk1.8.111/jre/lib/rt.jar:/usr/lib/jvm/jdk1.8.111/jre/lib/sunrsasign.jar:/usr/lib/jvm/jdk1.8.111/jre/lib/jsse.jar:/usr/lib/jvm/jdk1.8.111/jre/lib/jce.jar:/usr/lib/jvm/jdk1.8.111/jre/lib/charsets.jar:/usr/lib/jvm/jdk1.8.111/jre/lib/jfr.jar:/usr/lib/jvm/jdk1.8.111/jre/classes
+7:20:31.555 java.util.logging.config.file=/users/dpauwels/jitsi-videobridge/lib/logging.properties
+7:20:31.556 java.vm.specification.vendor=Oracle Corporation
+7:20:31.556 java.runtime.version=1.8.0_111-b14
+7:20:31.557 org.ice4j.ice.CONSENT_FRESHNESS_MAX_RETRANSMISSIONS=5
+7:20:31.558 org.jitsi.service.neomedia.VideoMediaStream.REQUEST_RETRANSMISSIONS=true
+7:20:31.558 user.name=dpauwels
+7:20:31.559 guice.disable.misplaced.annotation.check=true
+7:20:31.559 user.language=en
+7:20:31.560 org.jitsi.impl.neomedia.transform.csrc.SsrcTransformEngine.dropMutedAudioSourceInReverseTransform=true
+7:20:31.560 sun.boot.library.path=/usr/lib/jvm/jdk1.8.111/jre/lib/amd64
+7:20:31.561 net.java.sip.communicator.service.media.MIN_PORT_NUMBER=10001
+7:20:31.561 classworlds.conf=/usr/share/maven/bin/m2.conf
+7:20:31.562 net.java.sip.communicator.packetlogging.PACKET_LOGGING_ENABLED=false
+7:20:31.562 org.jitsi.videobridge.rest=false
+7:20:31.563 java.version=1.8.0_111
+7:20:31.563 user.timezone=America/Denver
+7:20:31.564 sun.arch.data.model=64
+7:20:31.564 org.ice4j.ice.CONSENT_FRESHNESS_WAIT_INTERVAL=500
+7:20:31.565 java.endorsed.dirs=/usr/lib/jvm/jdk1.8.111/jre/lib/endorsed
+7:20:31.565 sun.cpu.isalist=
+7:20:31.566 sun.jnu.encoding=UTF-8
+7:20:31.567 file.encoding.pkg=sun.io
+7:20:31.567 file.separator=/
+7:20:31.568 java.specification.name=Java Platform API Specification
+7:20:31.568 java.class.version=52.0
+7:20:31.568 user.country=US
+7:20:31.569 securerandom.source=file:/dev/./urandom
+7:20:31.569 net.java.sip.communicator.service.media.DISABLE_VIDEO_SUPPORT=true
+7:20:31.570 java.home=/usr/lib/jvm/jdk1.8.111/jre
+7:20:31.570 callstats.configurationFile=/users/dpauwels/jitsi-videobridge/config/callstats-java-sdk.properties
+7:20:31.571 java.vm.info=mixed mode
+7:20:31.571 os.version=3.13.0-33-generic
+7:20:31.572 path.separator=:
+7:20:31.572 java.vm.version=25.111-b14
+7:20:31.573 net.java.sip.communicator.CONFIGURATION_FILE_IS_READ_ONLY=true
+7:20:31.573 java.awt.printerjob=sun.print.PSPrinterJob
+7:20:31.574 org.jitsi.videobridge.TRUST_BWE=true
+7:20:31.574 sun.io.unicode.encoding=UnicodeLittle
+7:20:31.575 awt.toolkit=sun.awt.X11.XToolkit
+7:20:31.575 user.home=/users/dpauwels
+7:20:31.576 java.specification.vendor=Oracle Corporation
+7:20:31.576 java.library.path=/users/dpauwels/jitsi-videobridge/lib/native/linux-64
+7:20:31.577 java.vendor.url=http://java.oracle.com/
+7:20:31.577 org.jitsi.service.audionotifier.AudioNotifierService=org.jitsi.impl.neomedia.notify.AudioNotifierServiceImpl
+7:20:31.577 java.vm.vendor=Oracle Corporation
+7:20:31.578 org.ice4j.ice.CONSENT_FRESHNESS_MAX_WAIT_INTERVAL=500
+7:20:31.578 maven.home=/usr/share/maven
+7:20:31.579 java.runtime.name=Java(TM) SE Runtime Environment
+7:20:31.581 sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher compile exec:java -Dexec.args=--host=localhost --domain=jitsi --port=5347 --secret=X -Djava.library.path=/users/dpauwels/jitsi-videobridge/lib/native/linux-64 -Djava.util.logging.config.file=/users/dpauwels/jitsi-videobridge/lib/logging.properties
+7:20:31.581 java.class.path=/usr/share/maven/boot/plexus-classworlds-2.x.jar
+7:20:31.582 org.jitsi.videobridge.xmpp=true
+7:20:31.582 java.vm.specification.name=Java Virtual Machine Specification
+7:20:31.583 net.java.sip.communicator.service.media.DISABLE_AUDIO_SUPPORT=true
+7:20:31.583 java.vm.specification.version=1.8
+7:20:31.584 sun.cpu.endian=little
+7:20:31.584 sun.os.patch.level=unknown
+7:20:31.585 exec.args=--host=localhost --domain=jitsi --port=5347 --secret=YOURSECRET1
+7:20:31.585 java.io.tmpdir=/tmp
+7:20:31.586 org.jitsi.videobridge.ENABLE_SVC=true
+7:20:31.586 net.java.sip.communicator.service.media.MAX_PORT_NUMBER=20000
+7:20:31.587 java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+7:20:31.587 org.jitsi.service.neomedia.AudioMediaStream.DISABLE_DTMF_HANDLING=true
+7:20:31.588 os.arch=amd64
+7:20:31.588 java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment
+7:20:31.588 java.ext.dirs=/usr/lib/jvm/jdk1.8.111/jre/lib/ext:/usr/java/packages/lib/ext
+7:20:31.589 user.dir=/users/dpauwels/jitsi-videobridge
+7:20:31.589 line.separator=
+
+7:20:31.590 java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+7:20:31.590 org.ice4j.ice.harvest.DISABLE_LINK_LOCAL_ADDRESSES=true
+7:20:31.591 net.java.sip.communicator.impl.neomedia.video.maxbandwidth=2147483647
+7:20:31.591 log4j.configurationFile=/users/dpauwels/jitsi-videobridge/config/log4j2.xml
+7:20:31.592 file.encoding=UTF-8
+7:20:31.592 org.jitsi.videobridge.ENABLE_VP8_PICID_REWRITING=true
+7:20:31.592 java.specification.version=1.8
+7:20:31.593 org.jitsi.impl.neomedia.rtp.sendsidebandwidthestimation.BandwidthEstimatorImpl.START_BITRATE_BPS=2500000
+7:20:31.594 Normal classloader
+7:20:31.595 failed to find jitsi-defaults.properties with class loader, will continue without it.
+7:20:31.596 Normal classloader
+7:20:31.596 failed to find jitsi-default-overrides.properties with class loader, will continue without it.
+7:20:31.691 Resource manager STARTED
+7:20:31.692 Resource manager REGISTERED
+7:20:31.719 Network Address Manager         ...[  STARTED ]
+7:20:31.720 Network Address Manager Service ...[REGISTERED]
+7:20:31.736 Packet Logging Service ...[REGISTERED]
+7:20:31.767 No authorized source regexp configured. Will accept requests from any source.
+7:20:33.052 Initialized mapping harvesters (delay=1067ms).  stunDiscoveryFailed=false
+7:20:33.823 Warming up SecureRandom...
+7:20:33.824 Warming up SecureRandom finished.
+7:20:33.833 JVB Version: JVB 0.1.build.SVN
+7:20:33.840 Not starting the Jetty service for org.jitsi.videobridge.rest.RESTBundleActivator(port=8080)
+7:20:33.853 Not starting the Jetty service for org.jitsi.videobridge.rest.PublicRESTBundleActivator(port=-1)
+7:20:33.869 test.org.jitsi.jicofo.BLABLA=123.44.34.5
+7:20:33.869 org.jitsi.jicofo.HEALTH_CHECK_INTERVAL=-1
+7:20:33.870 test.org.jitsi.jicofo.FOCUS_USER_PASSWORD=**********
+7:20:33.871 test.org.jitsi.jicofo.COMPONENT_DOMAIN=example.com
+7:20:33.871 net.java.sip.communicator.packetlogging.PACKET_LOGGING_ENABLED=true
+7:20:33.872 some.empty_pass=**********
+7:20:33.872 com.sun.setting=true
+7:20:33.873 test.org.jitsi.jicofo.COMPONENT_SECRET=**********
+7:20:33.874 net.java.sip.communicator.packetlogging.PACKET_LOGGING_ICE4j_ENABLED=false
+7:20:33.875 net.java.sip.communicator.packetlogging.PACKET_LOGGING_JABBER_ENABLED=false
+7:20:33.875 net.java.sip.communicator.SC_HOME_DIR_LOCATION=/users/dpauwels
+7:20:33.876 net.java.sip.communicator.packetlogging.PACKET_LOGGING_RTP_ENABLED=false
+7:20:33.876 net.java.sip.communicator.packetlogging.PACKET_LOGGING_FILE_SIZE=-1
+7:20:33.877 net.java.sip.communicator.packetlogging.PACKET_LOGGING_FILE_COUNT=1
+7:20:33.878 net.java.sip.communicator.packetlogging.PACKET_LOGGING_SIP_ENABLED=false
+7:20:33.878 org.jitsi.videobridge.ENABLE_SVC=false
+7:20:33.878 net.java.sip.communicator.SC_HOME_DIR_NAME=.sip-communicator
+7:20:33.879 net.java.sip.communicator.packetlogging.PACKET_LOGGING_ARBITRARY_ENABLED=true
+7:20:34.078 Component org.jitsi.videobridge. config: 
+7:20:34.079   ping interval: 10000 ms
+7:20:34.080   ping timeout: 5000 ms
+7:20:34.080   ping threshold: 3
+7:29:27.392 CAT=stat create_conf,conf_id=5e1021e0d5cce7d6 conf_name=test,logging=true,conf_count=1,ch_count=0,v_streams=0
+7:29:27.397 CAT=stat create_content,conf_id=5e1021e0d5cce7d6,content=audio conf_count=1,ch_count=0,v_streams=0
+7:29:28.247 Initialized AbstractUdpListener with address 192.168.0.2:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.248 Initialized SinglePortUdpHarvester with address 192.168.0.2:10000/udp
+7:29:28.249 Initialized AbstractUdpListener with address [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.251 Initialized SinglePortUdpHarvester with address [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp
+7:29:28.252 Initialized AbstractUdpListener with address [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.252 Initialized SinglePortUdpHarvester with address [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:10000/udp
+7:29:28.255 Initialized AbstractUdpListener with address [2001:6a8:1d80:2021:230:48ff:fe78:f4aa]:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.255 Initialized SinglePortUdpHarvester with address [2001:6a8:1d80:2021:230:48ff:fe78:f4aa]:10000/udp
+7:29:28.256 Initialized AbstractUdpListener with address [2001:6a8:1d80:2021:c855:e505:9fde:6b13]:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.262 Initialized SinglePortUdpHarvester with address [2001:6a8:1d80:2021:c855:e505:9fde:6b13]:10000/udp
+7:29:28.264 Initialized AbstractUdpListener with address [2001:6a8:1d80:2021:486d:67a3:60d6:6a8b]:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.264 Initialized SinglePortUdpHarvester with address [2001:6a8:1d80:2021:486d:67a3:60d6:6a8b]:10000/udp
+7:29:28.265 Initialized AbstractUdpListener with address 10.2.0.198:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.266 Initialized SinglePortUdpHarvester with address 10.2.0.198:10000/udp
+7:29:28.267 Initialized AbstractUdpListener with address 192.168.4.2:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.267 Initialized SinglePortUdpHarvester with address 192.168.4.2:10000/udp
+7:29:28.268 Initialized AbstractUdpListener with address 192.168.1.2:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.268 Initialized SinglePortUdpHarvester with address 192.168.1.2:10000/udp
+7:29:28.269 Initialized AbstractUdpListener with address 192.168.2.2:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.270 Initialized SinglePortUdpHarvester with address 192.168.2.2:10000/udp
+7:29:28.272 Initialized AbstractUdpListener with address 192.168.3.2:10000/udp. Receive buffer size 212992 (asked for 10485760)
+7:29:28.273 Initialized SinglePortUdpHarvester with address 192.168.3.2:10000/udp
+7:29:28.288 Not using link-local address /fe80:0:0:0:230:48ff:fe78:f4ab%eth5 for TCP candidates.
+7:29:28.288 Not using link-local address /fe80:0:0:0:230:48ff:fe78:f4aa%eth4 for TCP candidates.
+7:29:28.289 Not using link-local address /fe80:0:0:0:215:17ff:fe1b:b526%eth3 for TCP candidates.
+7:29:28.289 Not using link-local address /fe80:0:0:0:215:17ff:fe1b:b527%eth2 for TCP candidates.
+7:29:28.289 Not using link-local address /fe80:0:0:0:215:17ff:fe1b:b524%eth1 for TCP candidates.
+7:29:28.290 Not using link-local address /fe80:0:0:0:215:17ff:fe1b:b525%eth0 for TCP candidates.
+7:29:28.324 Failed to initialize TCP harvester on port 443: java.net.SocketException: Permission denied. Retrying on port 4443.
+7:29:28.327 Not using link-local address /fe80:0:0:0:230:48ff:fe78:f4ab%eth5 for TCP candidates.
+7:29:28.328 Not using link-local address /fe80:0:0:0:230:48ff:fe78:f4aa%eth4 for TCP candidates.
+7:29:28.328 Not using link-local address /fe80:0:0:0:215:17ff:fe1b:b526%eth3 for TCP candidates.
+7:29:28.328 Not using link-local address /fe80:0:0:0:215:17ff:fe1b:b527%eth2 for TCP candidates.
+7:29:28.329 Not using link-local address /fe80:0:0:0:215:17ff:fe1b:b524%eth1 for TCP candidates.
+7:29:28.329 Not using link-local address /fe80:0:0:0:215:17ff:fe1b:b525%eth0 for TCP candidates.
+7:29:28.347 Initialized TCP harvester on port 4443, using SSLTCP:true
+7:29:28.371 Gathering candidates for component stream.RTP. Local ufrag 31dkb1bm23pnsq
+7:29:28.383 CAT=stat create_ice_tm,conf_id=5e1021e0d5cce7d6 ufrag=31dkb1bm23pnsq,bundle=9b7e504c,initiator=true
+7:29:28.441 CAT=stat create_stream,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=9829938f5d6eb226,endp_id=null,stream=1730097565
+7:29:28.441 CAT=stat create_channel,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=9829938f5d6eb226,endp_id=null,stream=1730097565 transport=default,bundle=9b7e504c,initiator=true,media_type=audio,relay_type=null
+7:29:28.449 SCTP connection with 9b7e504c not ready yet.
+7:29:28.450 No available transport channel, can't send a message
+7:29:28.509 CAT=stat create_content,conf_id=5e1021e0d5cce7d6,content=video conf_count=1,ch_count=1,v_streams=0
+7:29:28.571 CAT=stat create_stream,conf_id=5e1021e0d5cce7d6,content=video,ch_id=5f8365bab46f723e,endp_id=null,stream=650550013
+7:29:28.577 Creating a BandwidthEstimator for stream org.jitsi.impl.neomedia.VideoMediaStreamImpl@26c69afd
+7:29:28.578 getting SenderController
+7:29:28.579 VideoChannel added: 5f8365bab46f723e LastN: 1
+7:29:28.579 number of VideoChannels: 1 - sending channels: 0
+7:29:28.580 CAT=stat create_channel,conf_id=5e1021e0d5cce7d6,content=video,ch_id=5f8365bab46f723e,endp_id=null,stream=650550013 transport=default,bundle=9b7e504c,initiator=true,media_type=video,relay_type=null
+7:29:28.580 Entering update of BitrateController for VideoChannel 5f8365bab46f723e
+7:29:28.581 ConferenceEndpoints for update 5f8365bab46f723e size: 1 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:28.581 Prioritize for endpoint: 5f8365bab46f723e  LastN:0
+7:29:28.582 selectedEndpoints for 5f8365bab46f723e size: 0
+7:29:28.582 Allocated trackBitrateAllocations size: 0 for 5f8365bab46f723e
+7:29:28.584 CAT=stat create_content,conf_id=5e1021e0d5cce7d6,content=data conf_count=1,ch_count=2,v_streams=1
+7:29:28.613 PROCESSING TIME LIMIT EXCEEDED - it took 1253ms to process: <iq type="get" to="jitsi-videobridge.jitsi" from="focus@auth.jitsi/focus271768155428241" id="u5cM9-292"><conference xmlns="http://jitsi.org/protocol/colibri" name="test" gid="ffbf2c"><content name="audio"><channel channel-bundle-id="9b7e504c" initiator="true" last-n="0" endpoint="9b7e504c"><payload-type name="opus" clockrate="48000" id="111" channels="2"><parameter value="10" name="minptime"/><parameter value="1" name="useinbandfec"/></payload-type><payload-type id="103" name="ISAC" clockrate="16000"/><payload-type id="104" name="ISAC" clockrate="32000"/><payload-type id="126" name="telephone-event" clockrate="8000"/><rtp-hdrext id="1" uri="urn:ietf:params:rtp-hdrext:ssrc-audio-level"/></channel></content><content name="video"><channel channel-bundle-id="9b7e504c" initiator="true" last-n="0" endpoint="9b7e504c"><payload-type id="100" name="VP8" clockrate="90000"><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="ccm" subtype="fir"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack" subtype="pli"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="goog-remb"/><parameter value="800" name="x-google-start-bitrate"/></payload-type><payload-type id="107" name="h264" clockrate="90000"><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="ccm" subtype="fir"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack" subtype="pli"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="goog-remb"/><parameter value="800" name="x-google-start-bitrate"/></payload-type><payload-type id="101" name="VP9" clockrate="90000"><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="ccm" subtype="fir"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack" subtype="pli"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="goog-remb"/><parameter value="800" name="x-google-start-bitrate"/></payload-type><rtp-hdrext id="3" uri="http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time"/></channel></content><content name="data"><sctpconnection channel-bundle-id="9b7e504c" port="5000" initiator="true" endpoint="9b7e504c"/></content><channel-bundle id="9b7e504c"><transport xmlns="urn:xmpp:jingle:transports:ice-udp:1"><fingerprint xmlns="urn:xmpp:jingle:apps:dtls:0" required="false"/></transport></channel-bundle></conference></iq>
+7:29:28.649 Gathering candidates for component stream.RTP. Local ufrag 9qtmi1bm23poa8
+7:29:28.653 CAT=stat create_ice_tm,conf_id=5e1021e0d5cce7d6 ufrag=9qtmi1bm23poa8,bundle=6017ac38,initiator=true
+7:29:28.655 CAT=stat create_stream,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=d11891ae8a6ee1df,endp_id=null,stream=1785780426
+7:29:28.656 CAT=stat create_channel,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=d11891ae8a6ee1df,endp_id=null,stream=1785780426 transport=default,bundle=6017ac38,initiator=true,media_type=audio,relay_type=null
+7:29:28.656 Entering update of BitrateController for VideoChannel 5f8365bab46f723e
+7:29:28.658 Entering update of BitrateController for VideoChannel 5f8365bab46f723e
+7:29:28.658 ConferenceEndpoints for update 5f8365bab46f723e size: 2 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:28.659 ConferenceEndpoints for update 5f8365bab46f723e size: 2 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:28.659 Prioritize for endpoint: 5f8365bab46f723e  LastN:0
+7:29:28.659 Prioritize for endpoint: 5f8365bab46f723e  LastN:0
+7:29:28.660 selectedEndpoints for 5f8365bab46f723e size: 0
+7:29:28.660 selectedEndpoints for 5f8365bab46f723e size: 0
+7:29:28.661 Allocated trackBitrateAllocations size: 0 for 5f8365bab46f723e
+7:29:28.663 Allocated trackBitrateAllocations size: 0 for 5f8365bab46f723e
+7:29:28.669 CAT=stat create_stream,conf_id=5e1021e0d5cce7d6,content=video,ch_id=96486b15c51fe553,endp_id=null,stream=796019680
+7:29:28.670 Creating a BandwidthEstimator for stream org.jitsi.impl.neomedia.VideoMediaStreamImpl@2f724be0
+7:29:28.672 getting SenderController
+7:29:28.672 VideoChannel added: 96486b15c51fe553 LastN: 1
+7:29:28.673 number of VideoChannels: 2 - sending channels: 0
+7:29:28.674 CAT=stat create_channel,conf_id=5e1021e0d5cce7d6,content=video,ch_id=96486b15c51fe553,endp_id=null,stream=796019680 transport=default,bundle=6017ac38,initiator=true,media_type=video,relay_type=null
+7:29:28.674 Entering update of BitrateController for VideoChannel 96486b15c51fe553
+7:29:28.674 ConferenceEndpoints for update 96486b15c51fe553 size: 2 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:28.674 Prioritize for endpoint: 96486b15c51fe553  LastN:0
+7:29:28.675 selectedEndpoints for 96486b15c51fe553 size: 0
+7:29:28.675 Allocated trackBitrateAllocations size: 0 for 96486b15c51fe553
+7:29:29.059 Entering update of BitrateController for VideoChannel 96486b15c51fe553
+7:29:29.059 ConferenceEndpoints for update 96486b15c51fe553 size: 2 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:29.060 Prioritize for endpoint: 96486b15c51fe553  LastN:0
+7:29:29.060 selectedEndpoints for 96486b15c51fe553 size: 0
+7:29:29.062 Allocated trackBitrateAllocations size: 1 for 96486b15c51fe553
+7:29:29.067 subjective_quality=0,primary_ssrc=115042903,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=false,last_stable_bitrate_bps=0
+7:29:29.068 qot,1501162169068,796019680,1272603208,-1,-1,-1,96486b15c51fe553
+7:29:29.070 Starting ICE agent without remote candidates.
+7:29:29.071 Start ICE connectivity establishment. Local ufrag 31dkb1bm23pnsq
+7:29:29.072 Init checklist for stream stream
+7:29:29.080 ICE state changed from Waiting to Running. Local ufrag 31dkb1bm23pnsq
+7:29:29.081 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=412e94f2dc25742d,endp_id=9b7e504c old_state=Waiting,new_state=Running
+7:29:29.084 Start connectivity checks. Local ufrag 31dkb1bm23pnsq
+7:29:29.160 PROCESSING TIME LIMIT EXCEEDED - it took 116ms to process: <iq type="set" to="jitsi-videobridge.jitsi" from="focus@auth.jitsi/focus271768155428241" id="u5cM9-296"><conference xmlns="http://jitsi.org/protocol/colibri" id="5e1021e0d5cce7d6" name="test" gid="ffbf2c"><content name="audio"><channel id="9829938f5d6eb226"><payload-type name="opus" clockrate="48000" id="111" channels="2"><parameter value="10" name="minptime"/><parameter value="1" name="useinbandfec"/></payload-type><payload-type name="ISAC" clockrate="16000" id="103" channels="1"/><payload-type name="ISAC" clockrate="32000" id="104" channels="1"/><payload-type name="telephone-event" clockrate="8000" id="126" channels="1"/></channel></content><content name="video"><channel id="5f8365bab46f723e"><payload-type name="VP8" clockrate="90000" id="100" channels="1"><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="ccm" subtype="fir"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack" subtype="pli"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="goog-remb"/></payload-type><payload-type name="h264" clockrate="90000" id="107" channels="1"><parameter value="1" name="level-asymmetry-allowed"/><parameter value="1" name="packetization-mode"/><parameter value="42e01f" name="profile-level-id"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="ccm" subtype="fir"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack" subtype="pli"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="goog-remb"/></payload-type><payload-type name="VP9" clockrate="90000" id="101" channels="1"><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="ccm" subtype="fir"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="nack" subtype="pli"/><rtcp-fb xmlns="urn:xmpp:jingle:apps:rtp:rtcp-fb:0" type="goog-remb"/></payload-type><source xmlns="urn:xmpp:jingle:apps:rtp:ssma:0" ssrc="115042903"><parameter value="Ms3XmpKAejhWmGw" name="cname"/><parameter value="3980c6d7-b682-43cf-adaa-a8b5fe7de883 7373a2b5-0a00-4f45-8980-2432330f356b" name="msid"/><ssrc-info xmlns="http://jitsi.org/jitmeet" owner="test@conference.jitsi/9b7e504c"/></source></channel></content><channel-bundle id="9b7e504c"><transport xmlns="urn:xmpp:jingle:transports:ice-udp:1" ufrag="71xI" pwd="755c+rNcgyoBjsWqWmjk6oi7"><rtcp-mux/><fingerprint xmlns="urn:xmpp:jingle:apps:dtls:0" hash="sha-256" setup="passive" required="false">05:B7:32:6C:D7:39:DD:4B:52:06:E4:E3:A5:56:A3:21:08:AA:FA:31:50:E8:AA:D1:25:A9:EA:11:20:C1:CA:AB</fingerprint></transport></channel-bundle></conference></iq>
+7:29:29.191 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=33602,localport=4443]: End of stream!
+7:29:29.193 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=37364,localport=4443]: End of stream!
+7:29:29.193 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=47544,localport=4443]: End of stream!
+7:29:29.193 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=53676,localport=4443]: End of stream!
+7:29:29.193 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=49160,localport=4443]: End of stream!
+7:29:29.271 Failed to handle TCP socket Socket[addr=/10.2.0.195,port=41591,localport=4443]: End of stream!
+7:29:29.340 Add remote candidate for stream.RTP: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host
+7:29:29.342 Add remote candidate for stream.RTP: 10.2.0.195:48076/udp/host
+7:29:29.342 Entering update of BitrateController for VideoChannel 5f8365bab46f723e
+7:29:29.342 ConferenceEndpoints for update 5f8365bab46f723e size: 2 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:29.342 Add remote candidate for stream.RTP: 192.168.0.1:58020/udp/host
+7:29:29.344 Start ICE connectivity establishment. Local ufrag 9qtmi1bm23poa8
+7:29:29.344 Init checklist for stream stream
+7:29:29.345 Prioritize for endpoint: 5f8365bab46f723e  LastN:0
+7:29:29.345 selectedEndpoints for 5f8365bab46f723e size: 0
+7:29:29.345 Allocated trackBitrateAllocations size: 1 for 5f8365bab46f723e
+7:29:29.346 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=false,last_stable_bitrate_bps=0
+7:29:29.346 ICE state changed from Waiting to Running. Local ufrag 9qtmi1bm23poa8
+7:29:29.347 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=43ecebf702133368,endp_id=6017ac38 old_state=Waiting,new_state=Running
+7:29:29.347 qot,1501162169347,650550013,2021837591,-1,-1,-1,5f8365bab46f723e
+7:29:29.348 Trigger checks for pairs that were received before running state
+7:29:29.348 Start connectivity checks. Local ufrag 9qtmi1bm23poa8
+7:29:29.352 Update remote candidate for stream.RTP: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp
+7:29:29.353 Not adding duplicate remote candidate: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp
+7:29:29.354 Update remote candidate for stream.RTP: 10.2.0.195:48076/udp
+7:29:29.354 Not adding duplicate remote candidate: 10.2.0.195:48076/udp
+7:29:29.354 Update remote candidate for stream.RTP: 192.168.0.1:58020/udp
+7:29:29.354 Not adding duplicate remote candidate: 192.168.0.1:58020/udp
+7:29:29.355 Update remote candidate for stream.RTP: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:9/tcp
+7:29:29.355 Update remote candidate for stream.RTP: 10.2.0.195:9/tcp
+7:29:29.356 Update remote candidate for stream.RTP: 192.168.0.1:9/tcp
+7:29:29.356 new Pair added: 192.168.0.2:4443/tcp/host -> 10.2.0.195:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.357 new Pair added: 192.168.0.2:4443/tcp/host -> 192.168.0.1:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.357 new Pair added: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:4443/tcp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.357 new Pair added: [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:4443/tcp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.357 new Pair added: [2001:6a8:1d80:2021:230:48ff:fe78:f4aa]:4443/tcp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.358 new Pair added: [2001:6a8:1d80:2021:c855:e505:9fde:6b13]:4443/tcp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.358 new Pair added: [2001:6a8:1d80:2021:486d:67a3:60d6:6a8b]:4443/tcp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.358 new Pair added: 10.2.0.198:4443/tcp/host -> 10.2.0.195:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.358 new Pair added: 10.2.0.198:4443/tcp/host -> 192.168.0.1:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.358 new Pair added: 192.168.4.2:4443/tcp/host -> 10.2.0.195:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.359 new Pair added: 192.168.4.2:4443/tcp/host -> 192.168.0.1:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.359 new Pair added: 192.168.1.2:4443/tcp/host -> 10.2.0.195:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.359 new Pair added: 192.168.1.2:4443/tcp/host -> 192.168.0.1:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.360 new Pair added: 192.168.2.2:4443/tcp/host -> 10.2.0.195:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.360 new Pair added: 192.168.2.2:4443/tcp/host -> 192.168.0.1:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.360 new Pair added: 192.168.3.2:4443/tcp/host -> 10.2.0.195:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.360 new Pair added: 192.168.3.2:4443/tcp/host -> 192.168.0.1:9/tcp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.361 Update remote candidate for stream.RTP: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp
+7:29:29.377 Not adding duplicate remote candidate: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp
+7:29:29.378 Update remote candidate for stream.RTP: 10.2.0.195:48076/udp
+7:29:29.378 Not adding duplicate remote candidate: 10.2.0.195:48076/udp
+7:29:29.378 Update remote candidate for stream.RTP: 192.168.0.1:58020/udp
+7:29:29.378 Not adding duplicate remote candidate: 192.168.0.1:58020/udp
+7:29:29.379 Update remote candidate for stream.RTP: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:9/tcp
+7:29:29.379 Not adding duplicate remote candidate: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:9/tcp
+7:29:29.379 Update remote candidate for stream.RTP: 10.2.0.195:9/tcp
+7:29:29.379 Not adding duplicate remote candidate: 10.2.0.195:9/tcp
+7:29:29.409 Pair succeeded: [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.410 Adding allowed address: [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp
+7:29:29.413 Pair validated: [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.414 Pair succeeded: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.414 Nominate (first valid): [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.415 Pair validated: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.415 verify if nominated pair answer again
+7:29:29.417 Nominate (first valid): [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.418 IsControlling: true USE-CANDIDATE:false. Local ufrag 9qtmi1bm23poa8
+7:29:29.419 IsControlling: true USE-CANDIDATE:false. Local ufrag 9qtmi1bm23poa8
+7:29:29.438 Pair succeeded: [2001:6a8:1d80:2021:230:48ff:fe78:f4aa]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.439 Pair validated: [2001:6a8:1d80:2021:230:48ff:fe78:f4aa]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.440 Nominate (first valid): [2001:6a8:1d80:2021:230:48ff:fe78:f4aa]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.440 IsControlling: true USE-CANDIDATE:false. Local ufrag 9qtmi1bm23poa8
+7:29:29.460 Pair succeeded: [2001:6a8:1d80:2021:c855:e505:9fde:6b13]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.461 Pair validated: [2001:6a8:1d80:2021:c855:e505:9fde:6b13]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.461 Nominate (first valid): [2001:6a8:1d80:2021:c855:e505:9fde:6b13]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.462 IsControlling: true USE-CANDIDATE:false. Local ufrag 9qtmi1bm23poa8
+7:29:29.478 Pair succeeded: [2001:6a8:1d80:2021:486d:67a3:60d6:6a8b]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.478 Pair validated: [2001:6a8:1d80:2021:486d:67a3:60d6:6a8b]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.478 Nominate (first valid): [2001:6a8:1d80:2021:486d:67a3:60d6:6a8b]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.479 IsControlling: true USE-CANDIDATE:false. Local ufrag 9qtmi1bm23poa8
+7:29:29.505 Pair succeeded: [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Local ufrag 9qtmi1bm23poa8
+7:29:29.505 IsControlling: true USE-CANDIDATE:true. Local ufrag 9qtmi1bm23poa8
+7:29:29.505 Nomination confirmed for pair: [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP). Loal ufrag 9qtmi1bm23poa8
+7:29:29.506 Selected pair for stream stream.RTP: [2001:6a8:1d80:2021:dc5b:5527:3b26:543e]:10000/udp/host -> [2001:6a8:1d80:2021:4810:fce8:6ea6:9e66]:50840/udp/host (stream.RTP)
+7:29:29.507 CheckList of stream stream is COMPLETED
+7:29:29.508 ICE state changed from Running to Completed. Local ufrag 9qtmi1bm23poa8
+7:29:29.508 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=43ecebf702133368,endp_id=6017ac38 old_state=Running,new_state=Completed
+7:29:29.509 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=d11891ae8a6ee1df,endp_id=6017ac38,stream=1785780426
+7:29:29.515 Harvester used for selected pair for stream.RTP (local ufrag 9qtmi1bm23poa8): host
+7:29:29.707 Adding allowed address: 192.168.0.1:58020/udp
+7:29:29.732 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=video,ch_id=96486b15c51fe553,endp_id=6017ac38,stream=796019680
+7:29:29.749 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=data,ch_id=43ecebf702133368,endp_id=6017ac38
+7:29:29.803 Init'ing brian's patched usrsctp
+=====>: org_jitsi_sctp4j_Sctp.c calling init
+=====>: org_jitsi_sctp4j_Sctp.c about to set SCTP_DEBUG_ALL
+=====>: org_jitsi_sctp4j_Sctp.c setting SCTP_DEBUG_ALL
+7:29:30.059 Unknown DTLS handshake message type: -89
+7:29:30.063 Unknown DTLS handshake message type: -58
+7:29:30.065 Unknown DTLS handshake message type: 42
+7:29:30.084 jnopenssl successfully loaded
+7:29:30.179 keyframe,stream=796019680 ssrc=2046209853,idx=0,ts=3521354049,independent=true,min_seen=26948,max_seen=26948,start=26948,end=-1
+7:29:30.221 Resetting queue, last seq added: 9223372036854775806, current seq: 26948
+7:29:30.671 Add peer CandidatePair with new reflexive address to checkList: CandidatePair (State=Frozen Priority=7962127746123977215):
+	LocalCandidate=candidate:13 1 udp 2113939711 2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe 10000 typ host
+	RemoteCandidate=candidate:10000 1 udp 1853827327 2001:6a8:1d80:2021:950f:80bb:ec43:9557 53775 typ prflx
+7:29:30.673 no_remb,stream=796019680
+7:29:30.681 Pair succeeded: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:950f:80bb:ec43:9557]:53775/udp/prflx (stream.RTP). Local ufrag 31dkb1bm23pnsq
+7:29:30.682 Adding allowed address: [2001:6a8:1d80:2021:950f:80bb:ec43:9557]:53775/udp
+7:29:30.682 Pair validated: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:950f:80bb:ec43:9557]:53775/udp/prflx (stream.RTP). Local ufrag 31dkb1bm23pnsq
+7:29:30.682 Nominate (first valid): [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:950f:80bb:ec43:9557]:53775/udp/prflx (stream.RTP). Local ufrag 31dkb1bm23pnsq
+7:29:30.684 verify if nominated pair answer again
+7:29:30.684 IsControlling: true USE-CANDIDATE:false. Local ufrag 31dkb1bm23pnsq
+7:29:30.700 Pair succeeded: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:950f:80bb:ec43:9557]:53775/udp/prflx (stream.RTP). Local ufrag 31dkb1bm23pnsq
+7:29:30.702 IsControlling: true USE-CANDIDATE:true. Local ufrag 31dkb1bm23pnsq
+7:29:30.702 Nomination confirmed for pair: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:950f:80bb:ec43:9557]:53775/udp/prflx (stream.RTP). Loal ufrag 31dkb1bm23pnsq
+7:29:30.702 Selected pair for stream stream.RTP: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:950f:80bb:ec43:9557]:53775/udp/prflx (stream.RTP)
+7:29:30.703 CheckList of stream stream is COMPLETED
+7:29:30.703 ICE state changed from Running to Completed. Local ufrag 31dkb1bm23pnsq
+7:29:30.704 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=412e94f2dc25742d,endp_id=9b7e504c old_state=Running,new_state=Completed
+7:29:30.704 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=9829938f5d6eb226,endp_id=9b7e504c,stream=1730097565
+7:29:30.708 Harvester used for selected pair for stream.RTP (local ufrag 31dkb1bm23pnsq): host
+7:29:30.722 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=video,ch_id=5f8365bab46f723e,endp_id=9b7e504c,stream=650550013
+7:29:30.729 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=data,ch_id=412e94f2dc25742d,endp_id=9b7e504c
+7:29:30.758 Unknown DTLS handshake message type: 66
+7:29:30.796 keyframe,stream=650550013 ssrc=115042903,idx=0,ts=2592106023,independent=true,min_seen=5529,max_seen=5529,start=5529,end=-1
+7:29:30.802 Resetting queue, last seq added: 9223372036854775806, current seq: 5529
+7:29:30.832 SCTP socket accepted for endpoint 9b7e504c
+7:29:30.852 CAT=stat ds_change,conf_id=5e1021e0d5cce7d6 ds_id=9b7e504c
+7:29:30.856 SCTP connection with 6017ac38 not ready yet.
+7:29:30.858 No available transport channel, can't send a message
+7:29:30.858 Entering update of BitrateController for VideoChannel 96486b15c51fe553
+7:29:30.859 ConferenceEndpoints for update 96486b15c51fe553 size: 2 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:30.859 Prioritize for endpoint: 96486b15c51fe553	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 96486b15c51fe553
+7:29:30.859 Prioritize for endpoint: 96486b15c51fe553  LastN:0
+7:29:30.859 selectedEndpoints for 96486b15c51fe553 size: 0
+7:29:30.861 Allocated trackBitrateAllocations size: 1 for 96486b15c51fe553
+7:29:30.863 subjective_quality=0,primary_ssrc=115042903,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=26984
+7:29:30.863 qot,1501162170863,796019680,1272603208,-1,-1,-1,96486b15c51fe553
+7:29:30.864 Entering update of BitrateController for VideoChannel 5f8365bab46f723e
+7:29:30.864 ConferenceEndpoints for update 5f8365bab46f723e size: 2 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:30.864 Prioritize for endpoint: 5f8365bab46f723e	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 5f8365bab46f723e
+7:29:30.864 Prioritize for endpoint: 5f8365bab46f723e  LastN:0
+7:29:30.865 selectedEndpoints for 5f8365bab46f723e size: 0
+7:29:30.865 Allocated trackBitrateAllocations size: 1 for 5f8365bab46f723e
+7:29:30.866 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=63334
+7:29:30.866 qot,1501162170866,650550013,2021837591,-1,-1,-1,5f8365bab46f723e
+7:29:30.939 Adding allowed address: 10.2.0.146:55401/udp
+7:29:30.947 SCTP connection with 6017ac38 not ready yet.
+7:29:30.947 No available transport channel, can't send a message
+7:29:30.995 Adding allowed address: 192.168.1.1:49765/udp
+7:29:31.060 no_remb,stream=650550013
+7:29:31.169 no_remb,stream=796019680
+7:29:31.559 no_remb,stream=650550013
+7:29:31.670 no_remb,stream=796019680
+7:29:32.059 no_remb,stream=650550013
+7:29:32.170 no_remb,stream=796019680
+7:29:32.518 ICE state changed from Completed to Terminated. Local ufrag 9qtmi1bm23poa8
+7:29:32.519 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=43ecebf702133368,endp_id=6017ac38 old_state=Completed,new_state=Terminated
+7:29:32.559 no_remb,stream=650550013
+7:29:32.670 no_remb,stream=796019680
+7:29:32.811 SCTP connection with 6017ac38 not ready yet.
+7:29:32.812 No available transport channel, can't send a message
+7:29:33.059 no_remb,stream=650550013
+7:29:33.131 SCTP socket accepted for endpoint 6017ac38
+7:29:33.170 no_remb,stream=796019680
+7:29:33.560 no_remb,stream=650550013
+7:29:33.671 no_remb,stream=796019680
+7:29:33.714 ICE state changed from Completed to Terminated. Local ufrag 31dkb1bm23pnsq
+7:29:33.715 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=412e94f2dc25742d,endp_id=9b7e504c old_state=Completed,new_state=Terminated
+7:29:34.061 no_remb,stream=650550013
+7:29:34.170 no_remb,stream=796019680
+7:29:34.562 no_remb,stream=650550013
+7:29:34.670 no_remb,stream=796019680
+7:29:35.062 no_remb,stream=650550013
+7:29:35.171 no_remb,stream=796019680
+7:29:35.561 no_remb,stream=650550013
+7:29:36.062 no_remb,stream=650550013
+7:29:39.177 Failed to handle TCP socket Socket[addr=/2001:6a8:1d80:2021:4810:fce8:6ea6:9e66,port=49750,localport=4443]: End of stream!
+7:29:39.178 Failed to handle TCP socket Socket[addr=/2001:6a8:1d80:2021:4810:fce8:6ea6:9e66,port=34350,localport=4443]: End of stream!
+7:29:39.178 Failed to handle TCP socket Socket[addr=/2001:6a8:1d80:2021:4810:fce8:6ea6:9e66,port=35923,localport=4443]: End of stream!
+7:29:39.179 Failed to handle TCP socket Socket[addr=/2001:6a8:1d80:2021:4810:fce8:6ea6:9e66,port=57977,localport=4443]: End of stream!
+7:29:39.180 Failed to handle TCP socket Socket[addr=/2001:6a8:1d80:2021:4810:fce8:6ea6:9e66,port=53022,localport=4443]: End of stream!
+7:29:39.180 Failed to handle TCP socket Socket[addr=/10.2.0.195,port=41585,localport=4443]: End of stream!
+7:29:39.181 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=53682,localport=4443]: End of stream!
+7:29:39.181 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=33608,localport=4443]: End of stream!
+7:29:39.181 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=49166,localport=4443]: End of stream!
+7:29:39.181 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=37370,localport=4443]: End of stream!
+7:29:39.182 Failed to handle TCP socket Socket[addr=/192.168.0.1,port=47550,localport=4443]: End of stream!
+7:29:44.635 Gathering candidates for component stream.RTP. Local ufrag 8l3m61bm23q7tq
+7:29:44.637 CAT=stat create_ice_tm,conf_id=5e1021e0d5cce7d6 ufrag=8l3m61bm23q7tq,bundle=7e02004a,initiator=true
+7:29:44.637 CAT=stat create_stream,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=a2a12507fb0262fa,endp_id=null,stream=805670641
+7:29:44.637 CAT=stat create_channel,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=a2a12507fb0262fa,endp_id=null,stream=805670641 transport=default,bundle=7e02004a,initiator=true,media_type=audio,relay_type=null
+7:29:44.638 Entering update of BitrateController for VideoChannel 96486b15c51fe553
+7:29:44.638 ConferenceEndpoints for update 96486b15c51fe553 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:44.639 Prioritize for endpoint: 96486b15c51fe553	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 96486b15c51fe553
+7:29:44.639 Prioritize for endpoint: 96486b15c51fe553  LastN:0
+7:29:44.639 selectedEndpoints for 96486b15c51fe553 size: 0
+7:29:44.639 Allocated trackBitrateAllocations size: 1 for 96486b15c51fe553
+7:29:44.639 subjective_quality=0,primary_ssrc=115042903,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=641458
+7:29:44.639 qot,1501162184639,796019680,1272603208,-1,-1,-1,96486b15c51fe553
+7:29:44.640 Entering update of BitrateController for VideoChannel 5f8365bab46f723e
+7:29:44.640 ConferenceEndpoints for update 5f8365bab46f723e size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:44.640 Prioritize for endpoint: 5f8365bab46f723e	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 5f8365bab46f723e
+7:29:44.640 Prioritize for endpoint: 5f8365bab46f723e  LastN:0
+7:29:44.640 selectedEndpoints for 5f8365bab46f723e size: 0
+7:29:44.640 Allocated trackBitrateAllocations size: 1 for 5f8365bab46f723e
+7:29:44.640 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=549082
+7:29:44.640 qot,1501162184640,650550013,2021837591,-1,-1,-1,5f8365bab46f723e
+7:29:44.642 Entering update of BitrateController for VideoChannel 5f8365bab46f723e
+7:29:44.642 ConferenceEndpoints for update 5f8365bab46f723e size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:44.642 Prioritize for endpoint: 5f8365bab46f723e	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 5f8365bab46f723e
+7:29:44.643 Prioritize for endpoint: 5f8365bab46f723e  LastN:0
+7:29:44.643 selectedEndpoints for 5f8365bab46f723e size: 0
+7:29:44.644 Allocated trackBitrateAllocations size: 1 for 5f8365bab46f723e
+7:29:44.645 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=549264
+7:29:44.645 qot,1501162184645,650550013,2021837591,-1,-1,-1,5f8365bab46f723e
+7:29:44.645 Entering update of BitrateController for VideoChannel 96486b15c51fe553
+7:29:44.646 ConferenceEndpoints for update 96486b15c51fe553 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:44.646 Prioritize for endpoint: 96486b15c51fe553	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 96486b15c51fe553
+7:29:44.646 Prioritize for endpoint: 96486b15c51fe553  LastN:0
+7:29:44.646 selectedEndpoints for 96486b15c51fe553 size: 0
+7:29:44.646 Allocated trackBitrateAllocations size: 1 for 96486b15c51fe553
+7:29:44.647 subjective_quality=0,primary_ssrc=115042903,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=632522
+7:29:44.647 qot,1501162184647,796019680,1272603208,-1,-1,-1,96486b15c51fe553
+7:29:44.654 CAT=stat create_stream,conf_id=5e1021e0d5cce7d6,content=video,ch_id=dde29c7371bae730,endp_id=null,stream=876219433
+7:29:44.654 Creating a BandwidthEstimator for stream org.jitsi.impl.neomedia.VideoMediaStreamImpl@343a0c29
+7:29:44.654 getting SenderController
+7:29:44.655 VideoChannel added: dde29c7371bae730 LastN: 1
+7:29:44.655 Setting forwarded endpoint for dde29c7371bae730 -> 9b7e504c
+7:29:44.655 Sender changed for client dde29c7371bae730 -> 5f8365bab46f723e
+7:29:44.655 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:44.655 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:44.656 destEndpoint for channel dde29c7371bae730 is null
+7:29:44.656 trackBitrateAllocations is null for dde29c7371bae730
+7:29:44.673 number of VideoChannels: 3 - sending channels: 2
+7:29:44.674 CAT=stat create_channel,conf_id=5e1021e0d5cce7d6,content=video,ch_id=dde29c7371bae730,endp_id=null,stream=876219433 transport=default,bundle=7e02004a,initiator=true,media_type=video,relay_type=null
+7:29:44.674 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:44.674 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:44.675 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 dde29c7371bae730
+7:29:44.675 Prioritize for endpoint: dde29c7371bae730  LastN:0
+7:29:44.675 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:44.675 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:44.675 subjective_quality=0,primary_ssrc=115042903,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=632522
+7:29:44.675 qot,1501162184675,876219433,1272603208,-1,-1,-1,dde29c7371bae730
+7:29:44.676 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=549264
+7:29:44.676 qot,1501162184676,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:44.805 SCTP connection with 7e02004a not ready yet.
+7:29:44.805 No available transport channel, can't send a message
+7:29:44.925 SCTP connection with 7e02004a not ready yet.
+7:29:44.926 No available transport channel, can't send a message
+7:29:45.168 Entering update of BitrateController for VideoChannel 96486b15c51fe553
+7:29:45.168 ConferenceEndpoints for update 96486b15c51fe553 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:45.169 Prioritize for endpoint: 96486b15c51fe553	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 96486b15c51fe553
+7:29:45.169 Prioritize for endpoint: 96486b15c51fe553  LastN:0
+7:29:45.169 selectedEndpoints for 96486b15c51fe553 size: 0
+7:29:45.169 Allocated trackBitrateAllocations size: 2 for 96486b15c51fe553
+7:29:45.169 subjective_quality=0,primary_ssrc=115042903,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=628226
+7:29:45.170 qot,1501162185170,796019680,1272603208,-1,-1,-1,96486b15c51fe553
+7:29:45.170 subjective_quality=0,primary_ssrc=4284287766,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=false,last_stable_bitrate_bps=0
+7:29:45.170 qot,1501162185170,796019680,281925374,-1,-1,-1,96486b15c51fe553
+7:29:45.170 Entering update of BitrateController for VideoChannel 5f8365bab46f723e
+7:29:45.171 ConferenceEndpoints for update 5f8365bab46f723e size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:45.171 Prioritize for endpoint: 5f8365bab46f723e	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:0 5f8365bab46f723e
+7:29:45.171 Prioritize for endpoint: 5f8365bab46f723e  LastN:0
+7:29:45.172 selectedEndpoints for 5f8365bab46f723e size: 0
+7:29:45.172 Allocated trackBitrateAllocations size: 2 for 5f8365bab46f723e
+7:29:45.172 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=555728
+7:29:45.172 qot,1501162185172,650550013,2021837591,-1,-1,-1,5f8365bab46f723e
+7:29:45.173 subjective_quality=0,primary_ssrc=4284287766,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=false,last_stable_bitrate_bps=0
+7:29:45.173 qot,1501162185173,650550013,281925374,-1,-1,-1,5f8365bab46f723e
+7:29:45.175 Starting ICE agent without remote candidates.
+7:29:45.175 Start ICE connectivity establishment. Local ufrag 8l3m61bm23q7tq
+7:29:45.176 Init checklist for stream stream
+7:29:45.178 ICE state changed from Waiting to Running. Local ufrag 8l3m61bm23q7tq
+7:29:45.179 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=56b51b9aea5ccbfe,endp_id=7e02004a old_state=Waiting,new_state=Running
+7:29:45.179 Start connectivity checks. Local ufrag 8l3m61bm23q7tq
+7:29:46.807 SCTP connection with 7e02004a not ready yet.
+7:29:46.808 No available transport channel, can't send a message
+7:29:46.928 SCTP connection with 7e02004a not ready yet.
+7:29:46.929 No available transport channel, can't send a message
+7:29:47.448 Add peer CandidatePair with new reflexive address to checkList: CandidatePair (State=Frozen Priority=7962127746123977215):
+	LocalCandidate=candidate:13 1 udp 2113939711 2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe 10000 typ host
+	RemoteCandidate=candidate:10000 1 udp 1853827327 2001:6a8:1d80:2021:55f8:b81f:54cd:15e2 44465 typ prflx
+7:29:47.461 Pair succeeded: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:55f8:b81f:54cd:15e2]:44465/udp/prflx (stream.RTP). Local ufrag 8l3m61bm23q7tq
+7:29:47.461 Adding allowed address: [2001:6a8:1d80:2021:55f8:b81f:54cd:15e2]:44465/udp
+7:29:47.462 Pair validated: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:55f8:b81f:54cd:15e2]:44465/udp/prflx (stream.RTP). Local ufrag 8l3m61bm23q7tq
+7:29:47.462 Nominate (first valid): [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:55f8:b81f:54cd:15e2]:44465/udp/prflx (stream.RTP). Local ufrag 8l3m61bm23q7tq
+7:29:47.462 verify if nominated pair answer again
+7:29:47.462 IsControlling: true USE-CANDIDATE:false. Local ufrag 8l3m61bm23q7tq
+7:29:47.474 Pair succeeded: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:55f8:b81f:54cd:15e2]:44465/udp/prflx (stream.RTP). Local ufrag 8l3m61bm23q7tq
+7:29:47.475 IsControlling: true USE-CANDIDATE:true. Local ufrag 8l3m61bm23q7tq
+7:29:47.476 Nomination confirmed for pair: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:55f8:b81f:54cd:15e2]:44465/udp/prflx (stream.RTP). Loal ufrag 8l3m61bm23q7tq
+7:29:47.476 Selected pair for stream stream.RTP: [2001:6a8:1d80:2021:f9f1:5a58:6e0e:eebe]:10000/udp/host -> [2001:6a8:1d80:2021:55f8:b81f:54cd:15e2]:44465/udp/prflx (stream.RTP)
+7:29:47.478 CheckList of stream stream is COMPLETED
+7:29:47.478 ICE state changed from Running to Completed. Local ufrag 8l3m61bm23q7tq
+7:29:47.479 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=56b51b9aea5ccbfe,endp_id=7e02004a old_state=Running,new_state=Completed
+7:29:47.479 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=audio,ch_id=a2a12507fb0262fa,endp_id=7e02004a,stream=805670641
+7:29:47.482 Harvester used for selected pair for stream.RTP (local ufrag 8l3m61bm23q7tq): host
+7:29:47.492 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=video,ch_id=dde29c7371bae730,endp_id=7e02004a,stream=876219433
+7:29:47.501 CAT=stat transport_connected,conf_id=5e1021e0d5cce7d6,content=data,ch_id=56b51b9aea5ccbfe,endp_id=7e02004a
+7:29:47.527 Unknown DTLS handshake message type: 50
+7:29:47.605 SCTP socket accepted for endpoint 7e02004a
+7:29:47.632 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:47.633 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:47.633 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:47.633 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:47.633 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:47.634 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:47.652 Sending a FIR to ssrc=115042903 remainingRetries=9
+7:29:47.653 Sending a PLI to a media sender for which PLI support hasn't been explicitly signaled.
+7:29:47.653 qot,1501162187653,876219433,1272603208,-1,0,0,dde29c7371bae730
+7:29:47.653 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=572082
+7:29:47.653 qot,1501162187653,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:47.654 Forwarded Endpoints changed for VideoChannel dde29c7371bae730
+7:29:47.666 Adding allowed address: 192.168.3.1:51739/udp
+7:29:47.678 keyframe,stream=650550013 ssrc=115042903,idx=0,ts=2593626123,independent=true,min_seen=6747,max_seen=6747,start=6747,end=-1
+7:29:47.766 Adding allowed address: 10.2.0.161:52927/udp
+7:29:48.046 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:48.046 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:48.047 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:48.047 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:48.047 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:48.047 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:48.047 qot,1501162188047,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:48.047 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=570958
+7:29:48.048 qot,1501162188048,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:48.048 getting SenderController
+7:29:48.048 Videochannel dde29c7371bae730 bitrate estimation changed to: 2701000
+7:29:49.178 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:49.178 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:49.178 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:49.178 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:49.178 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:49.179 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:49.179 qot,1501162189179,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:49.179 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=582090
+7:29:49.179 qot,1501162189179,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:49.179 getting SenderController
+7:29:49.180 Videochannel dde29c7371bae730 bitrate estimation changed to: 2918080
+7:29:50.483 ICE state changed from Completed to Terminated. Local ufrag 8l3m61bm23q7tq
+7:29:50.484 CAT=stat ice_state_change,conf_id=5e1021e0d5cce7d6,content=data,ch_id=56b51b9aea5ccbfe,endp_id=7e02004a old_state=Completed,new_state=Terminated
+7:29:50.513 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:50.513 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:50.513 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:50.513 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:50.513 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:50.514 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:50.514 qot,1501162190514,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:50.514 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=581850
+7:29:50.514 qot,1501162190514,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:50.514 getting SenderController
+7:29:50.514 Videochannel dde29c7371bae730 bitrate estimation changed to: 3152526
+7:29:51.747 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:51.748 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:51.748 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:51.748 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:51.748 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:51.748 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:51.748 qot,1501162191748,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:51.749 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=584666
+7:29:51.749 qot,1501162191749,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:51.749 getting SenderController
+7:29:51.749 Videochannel dde29c7371bae730 bitrate estimation changed to: 3405728
+7:29:52.746 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:52.746 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:52.746 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:52.747 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:52.747 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:52.747 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:52.747 qot,1501162192747,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:52.747 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=588760
+7:29:52.747 qot,1501162192747,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:52.748 getting SenderController
+7:29:52.748 Videochannel dde29c7371bae730 bitrate estimation changed to: 614408
+7:29:53.165 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:53.165 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:53.165 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:53.166 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:53.166 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:53.166 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:53.166 qot,1501162193166,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:53.166 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=591954
+7:29:53.166 qot,1501162193166,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:53.167 getting SenderController
+7:29:53.167 Videochannel dde29c7371bae730 bitrate estimation changed to: 624272
+7:29:53.576 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:53.577 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:53.577 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:53.577 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:53.577 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:53.577 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:53.577 qot,1501162193577,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:53.578 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=589181
+7:29:53.578 qot,1501162193578,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:53.578 getting SenderController
+7:29:53.578 Videochannel dde29c7371bae730 bitrate estimation changed to: 644532
+7:29:53.992 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:53.992 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:53.992 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:53.993 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:53.993 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:53.993 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:53.993 qot,1501162193993,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:53.993 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=586006
+7:29:53.994 qot,1501162193994,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:53.994 getting SenderController
+7:29:53.994 Videochannel dde29c7371bae730 bitrate estimation changed to: 664561
+7:29:54.412 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:54.413 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:54.413 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:54.413 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:54.413 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:54.414 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:54.414 qot,1501162194414,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:54.414 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=593667
+7:29:54.414 qot,1501162194414,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:54.415 getting SenderController
+7:29:54.415 Videochannel dde29c7371bae730 bitrate estimation changed to: 675214
+7:29:54.826 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:54.826 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:54.827 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:54.827 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:54.827 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:54.827 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:54.828 qot,1501162194828,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:54.828 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=589870
+7:29:54.828 qot,1501162194828,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:54.828 getting SenderController
+7:29:54.829 Videochannel dde29c7371bae730 bitrate estimation changed to: 697095
+7:29:55.243 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:55.243 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:55.243 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:55.243 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:55.243 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:55.244 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:55.244 qot,1501162195244,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:55.244 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=585110
+7:29:55.244 qot,1501162195244,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:55.245 getting SenderController
+7:29:55.245 Videochannel dde29c7371bae730 bitrate estimation changed to: 718726
+7:29:55.661 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:55.662 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:55.662 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:55.662 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:55.662 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:55.662 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:55.662 qot,1501162195662,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:55.662 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=587258
+7:29:55.663 qot,1501162195663,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:55.663 getting SenderController
+7:29:55.663 Videochannel dde29c7371bae730 bitrate estimation changed to: 730231
+7:29:56.074 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:56.075 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:56.075 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:56.075 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:56.075 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:56.075 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:56.076 qot,1501162196075,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:56.076 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=580875
+7:29:56.076 qot,1501162196076,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:56.076 getting SenderController
+7:29:56.076 Videochannel dde29c7371bae730 bitrate estimation changed to: 753863
+7:29:56.538 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:56.538 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:56.539 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:56.539 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:56.539 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:56.539 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:56.539 qot,1501162196539,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:56.540 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=582054
+7:29:56.540 qot,1501162196540,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:56.540 getting SenderController
+7:29:56.540 Videochannel dde29c7371bae730 bitrate estimation changed to: 777224
+7:29:56.952 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:56.952 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:56.953 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:56.953 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:56.953 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:56.953 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:56.953 qot,1501162196953,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:56.953 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=577048
+7:29:56.954 qot,1501162196954,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:56.954 getting SenderController
+7:29:56.954 Videochannel dde29c7371bae730 bitrate estimation changed to: 789649
+7:29:57.369 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:57.370 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:57.370 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:57.370 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:57.370 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:57.370 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:57.370 qot,1501162197370,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:57.370 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=571080
+7:29:57.371 qot,1501162197371,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:57.371 getting SenderController
+7:29:57.371 Videochannel dde29c7371bae730 bitrate estimation changed to: 815172
+7:29:57.785 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:57.785 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:57.785 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:57.785 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:57.785 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:57.786 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:57.786 qot,1501162197786,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:57.786 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=564534
+7:29:57.786 qot,1501162197786,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:57.786 getting SenderController
+7:29:57.786 Videochannel dde29c7371bae730 bitrate estimation changed to: 840402
+7:29:58.201 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:58.202 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:58.202 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:58.202 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:58.202 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:58.202 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:58.202 qot,1501162198202,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:58.203 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=562253
+7:29:58.203 qot,1501162198203,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:58.203 getting SenderController
+7:29:58.203 Videochannel dde29c7371bae730 bitrate estimation changed to: 853821
+7:29:58.616 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:58.617 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:58.617 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:58.617 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:58.617 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:58.617 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:58.617 qot,1501162198617,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:58.618 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=563600
+7:29:58.618 qot,1501162198618,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:58.618 getting SenderController
+7:29:58.618 Videochannel dde29c7371bae730 bitrate estimation changed to: 881386
+7:29:59.038 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:59.039 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:59.039 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:59.039 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:59.039 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:59.039 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:59.039 qot,1501162199039,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:59.040 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=560917
+7:29:59.040 qot,1501162199040,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:59.040 getting SenderController
+7:29:59.040 Videochannel dde29c7371bae730 bitrate estimation changed to: 908634
+7:29:59.447 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:59.448 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:59.448 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:59.448 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:59.448 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:59.448 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:59.448 qot,1501162199448,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:59.449 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=557173
+7:29:59.449 qot,1501162199449,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:59.449 getting SenderController
+7:29:59.449 Videochannel dde29c7371bae730 bitrate estimation changed to: 923127
+7:29:59.863 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:29:59.864 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:29:59.864 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:29:59.864 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:29:59.864 selectedEndpoints for dde29c7371bae730 size: 0
+7:29:59.864 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:29:59.864 qot,1501162199864,876219433,1272603208,0,0,0,dde29c7371bae730
+7:29:59.865 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=562109
+7:29:59.865 qot,1501162199865,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:29:59.865 getting SenderController
+7:29:59.865 Videochannel dde29c7371bae730 bitrate estimation changed to: 946216
+7:30:11.034 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:30:11.035 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:30:11.035 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:30:11.035 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:30:11.035 selectedEndpoints for dde29c7371bae730 size: 0
+7:30:11.036 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:30:11.036 qot,1501162211036,876219433,1272603208,0,0,0,dde29c7371bae730
+7:30:11.036 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=617197
+7:30:11.036 qot,1501162211036,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:30:11.036 getting SenderController
+7:30:11.036 Videochannel dde29c7371bae730 bitrate estimation changed to: 961484
+7:30:11.243 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:30:11.244 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:30:11.244 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:30:11.244 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:30:11.244 selectedEndpoints for dde29c7371bae730 size: 0
+7:30:11.244 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:30:11.244 qot,1501162211244,876219433,1272603208,0,0,0,dde29c7371bae730
+7:30:11.244 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=612093
+7:30:11.244 qot,1501162211244,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:30:11.245 getting SenderController
+7:30:11.245 Videochannel dde29c7371bae730 bitrate estimation changed to: 977000
+7:30:11.448 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:30:11.448 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:30:11.448 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:30:11.448 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:30:11.448 selectedEndpoints for dde29c7371bae730 size: 0
+7:30:11.448 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:30:11.449 qot,1501162211449,876219433,1272603208,0,0,0,dde29c7371bae730
+7:30:11.449 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=612533
+7:30:11.449 qot,1501162211449,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:30:11.449 getting SenderController
+7:30:11.449 Videochannel dde29c7371bae730 bitrate estimation changed to: 992764
+7:30:11.871 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:30:11.872 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:30:11.872 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:30:11.872 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:30:11.872 selectedEndpoints for dde29c7371bae730 size: 0
+7:30:11.872 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:30:11.872 qot,1501162211872,876219433,1272603208,0,0,0,dde29c7371bae730
+7:30:11.872 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=615362
+7:30:11.873 qot,1501162211873,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:30:11.873 getting SenderController
+7:30:11.873 Videochannel dde29c7371bae730 bitrate estimation changed to: 1022913
+7:30:12.289 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:30:12.289 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:30:12.289 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:30:12.290 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:30:12.290 selectedEndpoints for dde29c7371bae730 size: 0
+7:30:12.290 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:30:12.290 qot,1501162212290,876219433,1272603208,0,0,0,dde29c7371bae730
+7:30:12.290 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=612323
+7:30:12.290 qot,1501162212290,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:30:12.290 getting SenderController
+7:30:12.291 Videochannel dde29c7371bae730 bitrate estimation changed to: 1037284
+7:30:29.658 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:30:29.659 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:30:29.659 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:30:29.659 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:30:29.659 selectedEndpoints for dde29c7371bae730 size: 0
+7:30:29.659 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:30:29.660 qot,1501162229660,876219433,1272603208,0,0,0,dde29c7371bae730
+7:30:29.660 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=586386
+7:30:29.660 qot,1501162229660,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:30:29.660 getting SenderController
+7:30:29.660 Videochannel dde29c7371bae730 bitrate estimation changed to: 1053936
+7:30:30.080 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:30:30.080 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:30:30.080 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:30:30.080 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:30:30.081 selectedEndpoints for dde29c7371bae730 size: 0
+7:30:30.081 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:30:30.081 qot,1501162230081,876219433,1272603208,0,0,0,dde29c7371bae730
+7:30:30.081 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=583926
+7:30:30.081 qot,1501162230081,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:30:30.081 getting SenderController
+7:30:30.081 Videochannel dde29c7371bae730 bitrate estimation changed to: 1070944
+7:30:45.095 1 seconds past: setting sender for client
+7:30:45.095 Setting forwarded endpoint for dde29c7371bae730 -> 9b7e504c
+7:30:45.096 Sender changed for client dde29c7371bae730 -> 5f8365bab46f723e
+7:30:45.096 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:30:45.096 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:30:45.096 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:30:45.096 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:30:45.096 selectedEndpoints for dde29c7371bae730 size: 0
+7:30:45.096 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:30:45.097 qot,1501162245097,876219433,1272603208,0,0,0,dde29c7371bae730
+7:30:45.097 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=605885
+7:30:45.097 qot,1501162245097,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:31:35.416 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:31:35.416 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:31:35.416 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:31:35.417 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:31:35.417 selectedEndpoints for dde29c7371bae730 size: 0
+7:31:35.417 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:31:35.417 qot,1501162295417,876219433,1272603208,0,0,0,dde29c7371bae730
+7:31:35.417 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=582931
+7:31:35.417 qot,1501162295417,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:31:35.418 getting SenderController
+7:31:35.418 Videochannel dde29c7371bae730 bitrate estimation changed to: 1074592
+7:31:44.011 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:31:44.011 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:31:44.011 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:31:44.011 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:31:44.011 selectedEndpoints for dde29c7371bae730 size: 0
+7:31:44.012 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:31:44.012 qot,1501162304012,876219433,1272603208,0,0,0,dde29c7371bae730
+7:31:44.012 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=574658
+7:31:44.012 qot,1501162304012,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:31:44.012 getting SenderController
+7:31:44.012 Videochannel dde29c7371bae730 bitrate estimation changed to: 1091760
+7:31:45.073 1 seconds past: setting sender for client
+7:31:45.074 Setting forwarded endpoint for dde29c7371bae730 -> 9b7e504c
+7:31:45.074 Sender changed for client dde29c7371bae730 -> 5f8365bab46f723e
+7:31:45.074 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:31:45.074 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:31:45.074 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:31:45.074 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:31:45.075 selectedEndpoints for dde29c7371bae730 size: 0
+7:31:45.075 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:31:45.075 qot,1501162305075,876219433,1272603208,0,0,0,dde29c7371bae730
+7:31:45.075 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=573677
+7:31:45.075 qot,1501162305075,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:31:48.520 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:31:48.521 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:31:48.521 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:31:48.521 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:31:48.521 selectedEndpoints for dde29c7371bae730 size: 0
+7:31:48.522 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:31:48.522 qot,1501162308522,876219433,1272603208,0,0,0,dde29c7371bae730
+7:31:48.522 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=561326
+7:31:48.522 qot,1501162308522,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:31:48.523 getting SenderController
+7:31:48.523 Videochannel dde29c7371bae730 bitrate estimation changed to: 1109120
+7:31:53.261 keyframe,stream=650550013 ssrc=115042903,idx=0,ts=2604928773,independent=true,min_seen=16186,max_seen=16186,start=16186,end=-1
+7:32:00.155 keyframe,stream=796019680 ssrc=2046209853,idx=0,ts=3534853869,independent=true,min_seen=37596,max_seen=37596,start=37596,end=-1
+7:32:10.897 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:32:10.897 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:32:10.897 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:32:10.898 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:32:10.898 selectedEndpoints for dde29c7371bae730 size: 0
+7:32:10.898 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:32:10.898 qot,1501162330898,876219433,1272603208,0,0,0,dde29c7371bae730
+7:32:10.898 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=607154
+7:32:10.899 qot,1501162330899,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:32:10.899 getting SenderController
+7:32:10.899 Videochannel dde29c7371bae730 bitrate estimation changed to: 1145120
+7:32:11.312 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:32:11.312 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:32:11.312 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:32:11.312 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:32:11.313 selectedEndpoints for dde29c7371bae730 size: 0
+7:32:11.313 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:32:11.313 qot,1501162331313,876219433,1272603208,0,0,0,dde29c7371bae730
+7:32:11.313 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=608040
+7:32:11.313 qot,1501162331313,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:32:11.313 getting SenderController
+7:32:11.314 Videochannel dde29c7371bae730 bitrate estimation changed to: 1168480
+7:32:41.479 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:32:41.480 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 9b7e504c
+7:32:41.480 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:32:41.480 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:32:41.480 selectedEndpoints for dde29c7371bae730 size: 0
+7:32:41.481 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:32:41.481 qot,1501162361481,876219433,1272603208,0,0,0,dde29c7371bae730
+7:32:41.481 subjective_quality=0,primary_ssrc=2046209853,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=597757
+7:32:41.482 qot,1501162361481,876219433,2021837591,-1,-1,-1,dde29c7371bae730
+7:32:41.482 getting SenderController
+7:32:41.482 Videochannel dde29c7371bae730 bitrate estimation changed to: 1207232
+7:32:45.076 1 seconds past: setting sender for client
+7:32:45.076 Setting forwarded endpoint for dde29c7371bae730 -> 6017ac38
+7:32:45.076 Sender changed for client dde29c7371bae730 -> 96486b15c51fe553
+7:32:45.076 Entering update of BitrateController for VideoChannel dde29c7371bae730
+7:32:45.077 ConferenceEndpoints for update dde29c7371bae730 size: 3 index 0: org.jitsi.videobridge.Endpoint 6017ac38
+7:32:45.077 Prioritize for endpoint: dde29c7371bae730	Dominant speaker: org.jitsi.videobridge.Endpoint 9b7e504c  LastN:1 dde29c7371bae730
+7:32:45.077 Prioritize for endpoint: dde29c7371bae730  LastN:1
+7:32:45.077 selectedEndpoints for dde29c7371bae730 size: 0
+7:32:45.077 Allocated trackBitrateAllocations size: 2 for dde29c7371bae730
+7:32:45.078 Sending a FIR to ssrc=2046209853 remainingRetries=9
+7:32:45.079 Sending a PLI to a media sender for which PLI support hasn't been explicitly signaled.
+7:32:45.079 qot,1501162365079,876219433,2021837591,-1,0,0,dde29c7371bae730
+7:32:45.079 subjective_quality=0,primary_ssrc=115042903,rtx_ssrc=-1,temporal_id=-1,spatial_id=-1,active=true,last_stable_bitrate_bps=632398
+7:32:45.080 qot,1501162365080,876219433,1272603208,-1,-1,-1,dde29c7371bae730
+7:32:45.080 Forwarded Endpoints changed for VideoChannel dde29c7371bae730
+7:32:45.154 keyframe,stream=796019680 ssrc=2046209853,idx=0,ts=3538903869,independent=true,min_seen=40971,max_seen=40971,start=40971,end=-1
+7:32:48.180 keyframe,stream=650550013 ssrc=115042903,idx=0,ts=2609871213,independent=true,min_seen=20306,max_seen=20306,start=20306,end=-1
+7:32:51.181 keyframe,stream=650550013 ssrc=115042903,idx=0,ts=2610141213,independent=true,min_seen=20529,max_seen=20529,start=20529,end=-1

@@ -1,0 +1,95 @@
+/**
+* Initialize
+**/
+
+.popupmenu {
+    padding: 0;
+    margin: 2px 0;
+    bottom: 0;
+    height: auto;
+
+    &:first-child {
+        margin-top: 2px;
+    }
+
+    &__item {
+        list-style-type: none;
+        text-align: left;
+        height: 35px;
+
+        &:hover {
+            background-color: $popupMenuSelectedItemBackground;
+        }
+    }
+
+    // Link Appearance
+    &__link,
+    &__contents {
+        display: block;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px;
+        height: 100%;
+        font-size: 9pt;
+        width: 100%;
+        cursor: hand;
+
+        &.disabled {
+            color: gray !important;
+            pointer-events: none;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__contents {
+        display: flex;
+
+        /**
+         * Positioning styles on the slider and its container are used to make
+         * the container fit the popup width, by removing the slider from the
+         * page flow, and then making the slider fit the container.
+         */
+        .popupmenu__slider_container {
+            position: relative;
+            width: 100%;
+
+            .popupmenu__slider {
+                bottom: 50%;
+                position: absolute;
+                top: 50%;
+                width: 100%;
+            }
+        }
+    }
+
+    &__icon {
+        vertical-align: middle;
+        position: relative;
+        display: inline-block;
+        min-width: 20px;
+        height: 100%;
+        text-align: center;
+
+        > * {
+            @include absoluteAligning();
+        }
+    }
+
+    .icon-kick {
+        font-size: 8pt;
+    }
+}
+
+span.remotevideomenu:hover ul.popupmenu, ul.popupmenu:hover {
+    display:block !important;
+}
+
+.remote-control-spinner {
+    top: 6px;
+    left: 2px;
+}
